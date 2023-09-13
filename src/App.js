@@ -1,11 +1,11 @@
 import './App.css';
 import './index.css'
-import TopNav from './components/TopNavBar'
+import Home from './layouts/Home'
 
 function App() {
   return (
     <div className="App">
-      <TopNav/>
+      <Home/>
     </div>
   );
 }
