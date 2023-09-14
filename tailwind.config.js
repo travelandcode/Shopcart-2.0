@@ -29,7 +29,9 @@ module.exports = {
         'deals-card': '445px',
         'product-wishlist': '40px',
         'wishlist-icon': '17px',
-        'add-to-cart-btn':'40px'
+        'add-to-cart-btn':'40px',
+        'left-arrow': '25px',
+        'right-arrow': '25px'
       },
       width:{
         'num':'116px',
@@ -47,11 +49,13 @@ module.exports = {
         'cart-icon': '24px',
         'account-container': '90px',
         'cart-container': '100px',
-        'deals-container': '1360px',
+        'deals-container': '1460px',
         'deals-card': '410px',
         'product-wishlist': '40px',
         'wishlist-icon': '20px',
-        'add-to-cart-btn': '122px'
+        'add-to-cart-btn': '122px',
+        'left-arrow': '25px',
+        'right-arrow': '25px'
       },
       margin:{
         'account-margin': '11px',
@@ -63,7 +67,8 @@ module.exports = {
         'product-description-margin': '10px',
         'total-ratings': '5px',
         'product-ratings': '15px',
-        'deal-margin-right': '24px'
+        'deal-margin-right': '24px',
+        'arrow-margin': '24px'
       },
       colors:{
         'top-nav': '#003d29',
@@ -75,14 +80,15 @@ module.exports = {
         'wishlist-container': '#fff',
         'add-to-cart-btn-border': '#231F1E',
         'after-add-to-cart': '#003d29',
-        'after-wishlist': '#f9dcdc'
+        'after-wishlist': '#f9dcdc',
+        'after-deals-arrow': '#003d29'
       },
       textColor:{
         'menu-txt': '#231F1E',
         'deals-txt': '#231F1E',
         'product-txt': '#231F1E',
         'product-description-txt': '#333',
-        'add-to-cart-txt': '#231F1E'
+        'add-to-cart-txt': '#231F1E',
       },
       padding:{
         'horizontal-top-nav': '40px',
