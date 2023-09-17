@@ -3,6 +3,7 @@ import TopNavBar from '../components/TopNavBar';
 import Deals from '../components/Deals/Deals';
 import DiscountBanner from '../components/DiscountBanner';
 import CategorySection from '../components/Categories/CategorySection';
+import BrandSection from '../components/Brands/BrandSection';
 
 function Home () {
     return (
@@ -12,6 +13,7 @@ function Home () {
             <DiscountBanner/>
             <CategorySection/>
             <Deals/>
+            <BrandSection />
         </div>
     );
 }
