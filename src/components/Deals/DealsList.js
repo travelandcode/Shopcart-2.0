@@ -1,7 +1,7 @@
 import Deal from "./Deal";
 import { useState } from "react";
-import LeftArrow from "../images/left.png"
-import RightArrow from "../images/right.png"
+import LeftArrow from "../../images/left.png"
+import RightArrow from "../../images/right.png"
 import Products from "../../products.json"
 
 function DealsList(){
