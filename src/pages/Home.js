@@ -2,6 +2,7 @@ import NavBar from '../components/NavBar';
 import TopNavBar from '../components/TopNavBar';
 import Deals from '../components/Deals/Deals';
 import DiscountBanner from '../components/DiscountBanner';
+import CategorySection from '../components/Categories/CategorySection';
 
 function Home () {
     return (
@@ -9,6 +10,7 @@ function Home () {
             <TopNavBar/>
             <NavBar/>
             <DiscountBanner/>
+            <CategorySection/>
             <Deals/>
         </div>
     );
