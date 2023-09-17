@@ -12,7 +12,10 @@ module.exports = {
       'add-to-cart': ['14px', {fontWeight:'600'}],
       'discount-title': ['52px', {fontWeight:'700', lineHeight:'120%'}],
       'discount-body': ['20px', {lineHeight:'145%'}],
-      'learn-txt': ['18px',{lineHeight:'24px',fontWeight:'600'}]
+      'learn-txt': ['18px',{lineHeight:'24px',fontWeight:'600'}],
+      'categories-section-title-txt': ['28px',{fontWeight:'700',lineHeight:'100%'}],
+      'category-title': ['24px',{fontWeight:'600'}]
+
     },
     extend: {
       backgroundImage: {
@@ -38,7 +41,9 @@ module.exports = {
         'left-arrow': '25px',
         'right-arrow': '25px',
         'discount-container': '482px',
-        'learn-btn': '60px'
+        'learn-btn': '60px',
+        'categories-section':'500px',
+        'category': '250px'
       },
       width:{
         'num':'116px',
@@ -65,12 +70,14 @@ module.exports = {
         'right-arrow': '25px',
         'discount-container': '1360px',
         'discount-content': '513px',
-        'learn-btn': '170px'
+        'learn-btn': '170px',
+        'categories-section':'1460px',
+        'category':'195px',
+        'category-grid':'1376px'
       },
       margin:{
         'account-margin': '11px',
         'cart-margin': '11px',
-        'deals-margin': '80px',
         'deals-text-margin': '40px',
         'product-title-top': '16px',
         'product-title-bottom': '12px',
@@ -79,7 +86,10 @@ module.exports = {
         'product-ratings': '15px',
         'deal-margin-right': '24px',
         'arrow-margin': '24px',
-        'discount-body': '50px'
+        'discount-body': '50px',
+        'categories-section-title-margin': '40px',
+        'category-title-margin-bottom': '10px',
+        'category-title-margin-top':'20px'
       },
       colors:{
         'top-nav': '#003d29',
@@ -105,7 +115,9 @@ module.exports = {
         'add-to-cart-txt': '#231F1E',
         'discount-title-txt': '#FFF',
         'discount-body': '#FFF',
-        'learn-txt': '#FFF'
+        'learn-txt': '#FFF',
+        'categories-section-title-txt':'#231F1E',
+        'category-title':'#FFF'
       },
       padding:{
         'horizontal-top-nav': '40px',
@@ -119,13 +131,17 @@ module.exports = {
         'discont-content-horizontal':'64px',
         'discount-content-vertical':'75px',
         'learn-container-horizontal': '36px',
-        'learn-container-vertical': '16px' 
+        'learn-container-vertical': '16px',
+        'categories-section-vertical': '80px',
+        'categories-section-horizontal':'65px',
+
       },
       borderRadius:{
         'search-bar': '100px',
         'product-container': '10px',
         'add-to-cart-btn': '50px',
-        'learn-btn': '50px'
+        'learn-btn': '50px',
+        'category-img': '10px'
       },
       spacing:{
         'wishlist': '16px',
@@ -135,9 +151,15 @@ module.exports = {
         'deals-font': 'Inter, sans-serif',
         'product-title': 'Inter, sans-serif',
         'discount-title': 'Inter, sans-serif',
+        'category-title': 'Eina02, sans-serif'
       },
       scale:{
-        'product-zoom':'1.2'
+        'product-zoom':'1.2',
+        'category-zoom':'1.2',
+        'category-container':'1'
+      },
+      zIndex:{
+        'category-title': '1'
       }
     },
   },
