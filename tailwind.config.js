@@ -168,7 +168,7 @@ module.exports = {
         'brand-section': '80px',
         'discount-banner-2-container-horizontal': '160px',
         'discount-banner-2-content-vertical': '62px',
-        'discount-banner-2-content-flex-top': '90px',
+        'discount-banner-2-content-flex-top': '60px',
         'discount-banner-2-content-flex-bottom': '40px'
 
       },
