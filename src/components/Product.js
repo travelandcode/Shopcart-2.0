@@ -7,7 +7,7 @@ function Product(props){
     const description = props.description
 
     return (
-        <div className="[ deals-card ][ h-deals-card w-deals-card ][ flex flex-col ][ mr-deal-margin-right ]">
+        <div className="[ product-card ][ h-deals-card w-deals-card ][ flex flex-col ][ mr-deal-margin-right ]">
             <div className="[ product-container ][ bg-product ][ rounded-product-container ][ relative ] ">
                     <img className="[ product-img  ][ mx-auto my-auto ][ transition-transform hover:scale-product-zoom ]" src={img_src} loading="lazy"/>
                 <div className="[ product-wishlist ][ h-product-wishlist w-product-wishlist ][ rounded-full ][ flex absolute ][ top-wishlist right-wishlist ][ bg-wishlist-container hover:bg-after-wishlist ]">
