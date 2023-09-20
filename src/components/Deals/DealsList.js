@@ -11,7 +11,9 @@ function DealsList(){
 
   const [startIndex, setStartIndex] = useState(0);
 
-  const productsToShow = products.slice(startIndex, startIndex + 3);
+  const dealProducts = products.filter((product) =>product.isDeal)
+
+  const productsToShow = dealProducts.slice(startIndex, startIndex + 3);
 
   const previousPage = () => {
     if (startIndex > 0) {
@@ -20,7 +22,7 @@ function DealsList(){
   };
 
   const nextPage = () => {
-    if (startIndex + 3 < products.length) {
+    if (startIndex + 3 < dealProducts.length) {
       setStartIndex(startIndex + 1);
     }
   };
