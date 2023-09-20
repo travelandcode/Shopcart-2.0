@@ -4,6 +4,7 @@ import Deals from '../components/Deals/Deals';
 import DiscountBanner from '../components/DiscountBanner';
 import CategorySection from '../components/Categories/CategorySection';
 import BrandSection from '../components/Brands/BrandSection';
+import DiscountBanner2 from '../components/DiscountBanner2';
 
 function Home () {
     return (
@@ -14,6 +15,7 @@ function Home () {
             <CategorySection/>
             <Deals/>
             <BrandSection />
+            <DiscountBanner2 />
         </div>
     );
 }

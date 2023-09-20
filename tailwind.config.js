@@ -17,12 +17,15 @@ module.exports = {
       'category-title': ['24px',{fontWeight:'600'}],
       'brand-title': ['18px',{fontWeight:'600'}],
       'brand-delivery-time': ['13px',{fontWeight:'500',lineHeight:'13px'}],
-      'brand-section-title-txt': ['28px',{fontWeight:'700',lineHeight:'100%'}]
+      'brand-section-title-txt': ['28px',{fontWeight:'700',lineHeight:'100%'}],
+      'discount-banner-2-title':['52px',{fontWeight:'700'}],
+      'discount-banner-2-par':['20px',{fontWeight:'500',lineHeight:'145%'}]
 
     },
     extend: {
       backgroundImage: {
-        'discount-background': "url('https://uploads-ssl.webflow.com/63e857eaeaf853471d5335ff/63e8c4e51a7c201f00ec5fe3_biscount%20banner-min.png')"
+        'discount-background': "url('https://uploads-ssl.webflow.com/63e857eaeaf853471d5335ff/63e8c4e51a7c201f00ec5fe3_biscount%20banner-min.png')",
+        'card-one': "url('https://uploads-ssl.webflow.com/63e857eaeaf853471d5335ff/63e8c4e768e3260571e48a0c_visa%20card-min.png')"
       },
       height:{
         'top-nav': '36px',
@@ -45,10 +48,14 @@ module.exports = {
         'right-arrow': '25px',
         'discount-container': '482px',
         'learn-btn': '60px',
+        'learn-btn-2': '55px',
         'categories-section':'500px',
         'category': '250px',
         'brand':'112px',
-        'brand-section': '407px'
+        'brand-section': '407px',
+        'discount-banner-2': '330px',
+        'shop-cart-cards': '166px'
+      
       },
       width:{
         'num':'116px',
@@ -80,7 +87,9 @@ module.exports = {
         'category':'195px',
         'category-grid':'1376px',
         'brand-section': '1376px',
-        'brand': '302px'
+        'brand': '302px',
+        'discount-banner-2-container': '1360px',
+        'shop-cart-cards': '303px'
       },
       margin:{
         'account-margin': '11px',
@@ -99,7 +108,10 @@ module.exports = {
         'category-title-margin-top':'20px',
         'brand-title': '13px',
         'brand-img-margin': '18px',
-        'brand-section-title-margin': '40px'
+        'brand-section-title-margin': '40px',
+        'discount-banner-2-title-margin': '18px',
+        'discount-banner-2-par-margin': '30px',
+        'shop-cart-cards': '40px'
       },
       colors:{
         'top-nav': '#003d29',
@@ -115,10 +127,12 @@ module.exports = {
         'after-deals-arrow': '#003d29',
         'discount-content': '#003d29',
         'learn-btn': '#FFF',
+        'learn-btn-2': '#003d29',
         'after-learn-btn': '#231F1E',
         'brand': '#f5f6f6',
         'brand-border': '#f5f6f6',
-        'after-brand-border': '#003d29'
+        'after-brand-border': '#003d29',
+        'discount-banner-2': '#ffe6cc'
       },
       textColor:{
         'menu-txt': '#231F1E',
@@ -131,7 +145,9 @@ module.exports = {
         'learn-txt': '#FFF',
         'categories-section-title-txt':'#231F1E',
         'category-title':'#FFF',
-        'brand-title': '#231f1e'
+        'brand-title': '#231f1e',
+        'discount-banner-2-title': '#231f1e',
+        'discount-banner-2-par': '#231f1e'
       },
       padding:{
         'horizontal-top-nav': '40px',
@@ -149,7 +165,11 @@ module.exports = {
         'categories-section-vertical': '80px',
         'categories-section-horizontal':'65px',
         'brand': '20px',
-        'brand-section': '80px'
+        'brand-section': '80px',
+        'discount-banner-2-container-horizontal': '160px',
+        'discount-banner-2-content-vertical': '62px',
+        'discount-banner-2-content-flex-top': '60px',
+        'discount-banner-2-content-flex-bottom': '40px'
 
       },
       borderRadius:{
@@ -163,8 +183,11 @@ module.exports = {
       spacing:{
         'wishlist': '16px',
         'brand-col': '23px',
-        'brand-row': '16px'
-
+        'brand-row': '16px',
+        'card-one-top': '37px',
+        'card-one-left': '22px',
+        'card-two-left': '6px',
+        'card-two-top': '18px'
       },
       fontFamily:{
         'deals-font': 'Inter, sans-serif',
@@ -180,7 +203,15 @@ module.exports = {
         'brand-image': '1.2'
       },
       zIndex:{
-        'category-title': '1'
+        'category-title': '1',
+        'shop-cart-cards': '1',
+        'card-one': '2',
+        'card-two': '1'
+      },
+      rotate:{
+        'card-one': '30.6deg',
+        'card-two': '21.6deg',
+        'card-three': '15deg'
       }
     },
   },
