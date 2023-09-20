@@ -19,7 +19,8 @@ module.exports = {
       'brand-delivery-time': ['13px',{fontWeight:'500',lineHeight:'13px'}],
       'brand-section-title-txt': ['28px',{fontWeight:'700',lineHeight:'100%'}],
       'discount-banner-2-title':['52px',{fontWeight:'700'}],
-      'discount-banner-2-par':['20px',{fontWeight:'500',lineHeight:'145%'}]
+      'discount-banner-2-par':['20px',{fontWeight:'500',lineHeight:'145%'}],
+      'best-sellers-txt': [ '28px', { lineHeight: '100%',fontWeight:'700' }]
 
     },
     extend: {
@@ -54,7 +55,8 @@ module.exports = {
         'brand':'112px',
         'brand-section': '407px',
         'discount-banner-2': '330px',
-        'shop-cart-cards': '166px'
+        'shop-cart-cards': '166px',
+        'best-sellers-container': '578px',
       
       },
       width:{
@@ -89,7 +91,8 @@ module.exports = {
         'brand-section': '1376px',
         'brand': '302px',
         'discount-banner-2-container': '1360px',
-        'shop-cart-cards': '303px'
+        'shop-cart-cards': '303px',
+        'best-sellers-container': '1460px',
       },
       margin:{
         'account-margin': '11px',
@@ -106,12 +109,15 @@ module.exports = {
         'categories-section-title-margin': '40px',
         'category-title-margin-bottom': '10px',
         'category-title-margin-top':'20px',
+        'brand-section-top': '40px',
         'brand-title': '13px',
         'brand-img-margin': '18px',
         'brand-section-title-margin': '40px',
         'discount-banner-2-title-margin': '18px',
         'discount-banner-2-par-margin': '30px',
-        'shop-cart-cards': '40px'
+        'discount-banner-2': '80px',
+        'shop-cart-cards': '40px',
+        'best-sellers-text-margin': '40px'
       },
       colors:{
         'top-nav': '#003d29',
@@ -147,7 +153,8 @@ module.exports = {
         'category-title':'#FFF',
         'brand-title': '#231f1e',
         'discount-banner-2-title': '#231f1e',
-        'discount-banner-2-par': '#231f1e'
+        'discount-banner-2-par': '#231f1e',
+        'best-sellers-txt': '#231F1E',
       },
       padding:{
         'horizontal-top-nav': '40px',
@@ -169,7 +176,8 @@ module.exports = {
         'discount-banner-2-container-horizontal': '160px',
         'discount-banner-2-content-vertical': '62px',
         'discount-banner-2-content-flex-top': '60px',
-        'discount-banner-2-content-flex-bottom': '40px'
+        'discount-banner-2-content-flex-bottom': '40px',
+        'best-sellers--horizontal': '40px',
 
       },
       borderRadius:{

@@ -1,10 +1,11 @@
 import NavBar from '../components/NavBar';
 import TopNavBar from '../components/TopNavBar';
-import Deals from '../components/Deals/Deals';
+import Deals from '../components/Deals';
 import DiscountBanner from '../components/DiscountBanner';
 import CategorySection from '../components/Categories/CategorySection';
 import BrandSection from '../components/Brands/BrandSection';
 import DiscountBanner2 from '../components/DiscountBanner2';
+import BestSellers from '../components/BestSellers';
 
 function Home () {
     return (
@@ -16,6 +17,7 @@ function Home () {
             <Deals/>
             <BrandSection />
             <DiscountBanner2 />
+            <BestSellers />
         </div>
     );
 }
