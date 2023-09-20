@@ -40,6 +40,165 @@
         "description": "Stainless Steel, Food Safe and Hand Washable",
         "price": "$19.00",
         "img_src":"https://uploads-ssl.webflow.com/63e857eaeaf853471d5335ff/63e8c4e65cc936826acce6d9_pendleton%20water%20bottle-min.png"
-    }
+    },
+    {
+        "id":6,
+        "name": "Rimowa Tote Medium Bag",
+        "description": "Canvas, Full Grain Leather",
+        "price": "$49.99",
+        "img_src": "https://storage.cloud.google.com/shopcart-uploads/Rimowa%20Bag.png"
 
+    },
+    {
+        "id":7,
+        "name": "OneOdio Headphones",
+        "description": "Over Ear, Wireless, 110 Hrs",
+        "price": "$44.99",
+        "img_src": "https://storage.cloud.google.com/shopcart-uploads/one-odio-headphones.png"
+
+    },
+    {
+        "id":8,
+        "name": "Apple iPhone 14 Pro Max",
+        "description": "Gold, 256 GB, GSM Unlocked",
+        "price": "$1100.00",
+        "img_src": "https://storage.cloud.google.com/shopcart-uploads/iphone-14-pro-max.png"
+
+    },
+    {
+        "id":9,
+        "name": "GTPLAYER Gaming Chair",
+        "description": "High Back Ergonomic Computer Chair with Lumbar Support",
+        "price": "$99.99",
+        "img_src": "https://storage.cloud.google.com/shopcart-uploads/gaming-chair.png"
+
+    },
+    {
+        "id":10,
+        "name": "Herschel Laptop Backpack",
+        "description": "Black Crosshatch/Black Rubber, Classic 25.0L",
+        "price": "$120.00",
+        "img_src": "https://storage.cloud.google.com/shopcart-uploads/backpack.png"
+
+    },
+    {
+        "id":11,
+        "name": "Nike Men's Basketball Shoe",
+        "description": "Rubber sole, Retro Style, Skateboard shoes",
+        "price": "$150.00",
+        "img_src": "https://storage.cloud.google.com/shopcart-uploads/shoe.png"
+
+    },
+    {
+        "id":12,
+        "name": "SwissGear Roller Luggage",
+        "description": "Black, Carry-On 21-Inch",
+        "price": "$119.99",
+        "img_src": "https://storage.cloud.google.com/shopcart-uploads/luggage.png"
+
+    },
+    {
+        "id":13,
+        "name": "Counting the Cost",
+        "description": "Hardcover - September 12, 2023",
+        "price": "$25.99",
+        "img_src": "https://storage.cloud.google.com/shopcart-uploads/counting-the-cost-book.png"
+
+    },
+    {
+        "id":14,
+        "name": "Xbox Core Wireless Controller",
+        "description": "Shock Blue - Xbox Series X|S, Xbox One, and Windows Devices",
+        "price": "$64.99",
+        "img_src": "https://storage.cloud.google.com/shopcart-uploads/xbox-controller.png"
+
+    },
+    {
+        "id":15,
+        "name": "Canon EOS Rebel T7 DSLR Camera",
+        "description": "18-55mm Lens | 24.1 MP CMOS Sensor | DIGIC 4+ Image Processor and Full HD Videos",
+        "price": "$479.00",
+        "img_src": "https://storage.cloud.google.com/shopcart-uploads/cannon-camera.png"
+
+    },
+    {
+        "id":16,
+        "name": "Supreme Water Bottle",
+        "description": "Insulated dual-layer walls ensure drinks stay cool in the clutch",
+        "price": "$99.99",
+        "img_src": "https://uploads-ssl.webflow.com/63e857eaeaf853471d5335ff/63e8c4e78b497e3a5646b82f_water%20pot-min.png"
+
+    },
+    {
+        "id":17,
+        "name": "Flower Laptop Sleeve",
+        "description": "15 in. x 10 in. -Flap top closure",
+        "price": "$39.99",
+        "img_src": "https://uploads-ssl.webflow.com/63e857eaeaf853471d5335ff/63e8c4e55cc9361a8ecce6d4_flower%20leptop%20sleeve-min.png"
+
+    },
+    {
+        "id":18,
+        "name": "Citizen Watch",
+        "description": "Citizen 650M, W-69g",
+        "price": "$59.99",
+        "img_src": "https://uploads-ssl.webflow.com/63e857eaeaf853471d5335ff/63e8c4e74b76916e072f2466_watch-min.png"
+
+    },
+    {
+        "id":19,
+        "name": "Apple AirPods Max",
+        "description": "Wireless Over-Ear Headphones",
+        "price": "$500.00",
+        "img_src": "https://storage.cloud.google.com/shopcart-uploads/apple-airpods.png"
+
+    },
+    {
+        "id":20,
+        "name": "Fossil Gen 6 44mm Smart Watch",
+        "description": "Alexa Built-In, Fitness Tracker, Sleep Tracker, GPS, Speaker, Music Control",
+        "price": "$199.99",
+        "img_src": "https://storage.cloud.google.com/shopcart-uploads/fossil-smart-watch.png"
+
+    },
+    {
+        "id":21,
+        "name": "Holly",
+        "description": "Hardcover - September 5, 2023",
+        "price": "$17.99",
+        "img_src": "https://storage.cloud.google.com/shopcart-uploads/holly-book.png"
+
+    },
+    {
+        "id":22,
+        "name": "Clarks Men's Desert Trek Oxford",
+        "description": "Black Suede, Imported, Crepe Sole",
+        "price": "$150.00",
+        "img_src": "https://storage.cloud.google.com/shopcart-uploads/clarks-shoe.png"
+
+    },
+    {
+        "id":23,
+        "name": "Nike AirForce 1 Shoe",
+        "description": "White, Rubber Sole, 100% Polyester",
+        "price": "$150.00",
+        "img_src": "https://storage.cloud.google.com/shopcart-uploads/nike-air-force.png"
+
+    },
+    {
+        "id":24,
+        "name": "SAMSUNG Galaxy S23 Ultra",
+        "description": "512GB, 200MP Camera, Night Mode, Long Battery Life, S Pen",
+        "price": "$1300.00",
+        "img_src": "https://storage.cloud.google.com/shopcart-uploads/samsung-s23.png"
+
+    },
+    {
+        "id":25,
+        "name": "tomtoc Travel Backpack 40L",
+        "description": "TSA Friendly Flight Approved Carry-on Luggage Hand Backpack",
+        "price": "$89.99",
+        "img_src": "https://storage.cloud.google.com/shopcart-uploads/tomtoc.png"
+
+    }
 ]
