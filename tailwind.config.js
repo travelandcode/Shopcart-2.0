@@ -20,7 +20,9 @@ module.exports = {
       'brand-section-title-txt': ['28px',{fontWeight:'700',lineHeight:'100%'}],
       'discount-banner-2-title':['52px',{fontWeight:'700'}],
       'discount-banner-2-par':['20px',{fontWeight:'500',lineHeight:'145%'}],
-      'best-sellers-txt': [ '28px', { lineHeight: '100%',fontWeight:'700' }]
+      'best-sellers-txt': [ '28px', { lineHeight: '100%',fontWeight:'700' }],
+      'best-selling-store-title-txt': ['28px',{fontWeight:'700',lineHeight:'100%'}],
+      'delivery-description': ['12px',{lineHeight:'160%'}]
 
     },
     extend: {
@@ -57,6 +59,7 @@ module.exports = {
         'discount-banner-2': '330px',
         'shop-cart-cards': '166px',
         'best-sellers-container': '578px',
+        'best-selling-store-area': '514px'
       
       },
       width:{
@@ -93,6 +96,8 @@ module.exports = {
         'discount-banner-2-container': '1360px',
         'shop-cart-cards': '303px',
         'best-sellers-container': '1460px',
+        'best-selling-store-area': '1460px',
+        'best-selling-store-grid':'1376px',
       },
       margin:{
         'account-margin': '11px',
@@ -117,7 +122,9 @@ module.exports = {
         'discount-banner-2-par-margin': '30px',
         'discount-banner-2': '80px',
         'shop-cart-cards': '40px',
-        'best-sellers-text-margin': '40px'
+        'best-sellers-text-margin': '40px',
+        'best-selling-store-margin': '80px',
+        'best-selling-store-title-margin': '40px',
       },
       colors:{
         'top-nav': '#003d29',
@@ -155,6 +162,7 @@ module.exports = {
         'discount-banner-2-title': '#231f1e',
         'discount-banner-2-par': '#231f1e',
         'best-sellers-txt': '#231F1E',
+        'best-selling-store-title-txt':'#231F1E',
       },
       padding:{
         'horizontal-top-nav': '40px',
@@ -178,6 +186,8 @@ module.exports = {
         'discount-banner-2-content-flex-top': '60px',
         'discount-banner-2-content-flex-bottom': '40px',
         'best-sellers--horizontal': '40px',
+        'best-selling-store-padding': '70px',
+        'best-selling-store-horizontal': '65px'
 
       },
       borderRadius:{

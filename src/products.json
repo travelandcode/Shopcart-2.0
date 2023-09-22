@@ -58,7 +58,7 @@
         "name": "Rimowa Tote Medium Bag",
         "description": "Canvas, Full Grain Leather",
         "price": "$49.99",
-        "img_src": "https://storage.cloud.google.com/shopcart-uploads/Rimowa%20Bag.png",
+        "img_src": "rimowa-bag.png",
         "isDeal":true,
         "isBestSeller":true
 
@@ -68,7 +68,7 @@
         "name": "OneOdio Headphones",
         "description": "Over Ear, Wireless, 110 Hrs",
         "price": "$44.99",
-        "img_src": "https://storage.cloud.google.com/shopcart-uploads/one-odio-headphones.png",
+        "img_src": "one-odio-headphones.png",
         "isDeal":true,
         "isBestSeller":true
 
@@ -78,7 +78,7 @@
         "name": "Apple iPhone 14 Pro Max",
         "description": "Gold, 256 GB, GSM Unlocked",
         "price": "$1100.00",
-        "img_src": "https://storage.cloud.google.com/shopcart-uploads/iphone-14-pro-max.png",
+        "img_src": "iphone-14-pro-max.png",
         "isDeal":false,
         "isBestSeller":true
 
@@ -88,7 +88,7 @@
         "name": "GTPLAYER Gaming Chair",
         "description": "High Back Ergonomic Computer Chair with Lumbar Support",
         "price": "$99.99",
-        "img_src": "https://storage.cloud.google.com/shopcart-uploads/gaming-chair.png",
+        "img_src": "gaming-chair.png",
         "isDeal":false,
         "isBestSeller":true
 
@@ -98,7 +98,7 @@
         "name": "Herschel Laptop Backpack",
         "description": "Black Crosshatch/Black Rubber, Classic 25.0L",
         "price": "$120.00",
-        "img_src": "https://storage.cloud.google.com/shopcart-uploads/backpack.png",
+        "img_src": "herschel-backpack.png",
         "isDeal":true,
         "isBestSeller":false
 
@@ -108,7 +108,7 @@
         "name": "Nike Men's Basketball Shoe",
         "description": "Rubber sole, Retro Style, Skateboard shoes",
         "price": "$150.00",
-        "img_src": "https://storage.cloud.google.com/shopcart-uploads/shoe.png",
+        "img_src": "nike-shoe.png",
         "isDeal":false,
         "isBestSeller":true
 
@@ -118,7 +118,7 @@
         "name": "SwissGear Roller Luggage",
         "description": "Black, Carry-On 21-Inch",
         "price": "$119.99",
-        "img_src": "https://storage.cloud.google.com/shopcart-uploads/luggage.png",
+        "img_src": "luggage.png",
         "isDeal":false,
         "isBestSeller":true
 
@@ -128,7 +128,7 @@
         "name": "Counting the Cost",
         "description": "Hardcover - September 12, 2023",
         "price": "$25.99",
-        "img_src": "https://storage.cloud.google.com/shopcart-uploads/counting-the-cost-book.png",
+        "img_src": "counting-the-cost-book.png",
         "isDeal":true,
         "isBestSeller":true
 
@@ -138,7 +138,7 @@
         "name": "Xbox Core Wireless Controller",
         "description": "Shock Blue - Xbox Series X|S, Xbox One, and Windows Devices",
         "price": "$64.99",
-        "img_src": "https://storage.cloud.google.com/shopcart-uploads/xbox-controller.png",
+        "img_src": "xbox-controller.png",
         "isDeal":true,
         "isBestSeller":false
 
@@ -148,7 +148,7 @@
         "name": "Canon EOS Rebel T7 DSLR Camera",
         "description": "18-55mm Lens | 24.1 MP CMOS Sensor | DIGIC 4+ Image Processor and Full HD Videos",
         "price": "$479.00",
-        "img_src": "https://storage.cloud.google.com/shopcart-uploads/cannon-camera.png",
+        "img_src": "cannon-camera.png",
         "isDeal":false,
         "isBestSeller":true
 
@@ -188,7 +188,7 @@
         "name": "Apple AirPods Max",
         "description": "Wireless Over-Ear Headphones",
         "price": "$500.00",
-        "img_src": "https://storage.cloud.google.com/shopcart-uploads/apple-airpods.png",
+        "img_src": "apple-airpods.png",
         "isDeal":false,
         "isBestSeller":true
 
@@ -198,7 +198,7 @@
         "name": "Fossil Gen 6 44mm Smart Watch",
         "description": "Alexa Built-In, Fitness Tracker, Sleep Tracker, GPS, Speaker, Music Control",
         "price": "$199.99",
-        "img_src": "https://storage.cloud.google.com/shopcart-uploads/fossil-smart-watch.png",
+        "img_src": "fossil-smart-watch.png",
         "isDeal":false,
         "isBestSeller":true
 
@@ -208,7 +208,7 @@
         "name": "Holly",
         "description": "Hardcover - September 5, 2023",
         "price": "$17.99",
-        "img_src": "https://storage.cloud.google.com/shopcart-uploads/holly-book.png",
+        "img_src": "holly-book.png",
         "isDeal":true,
         "isBestSeller":true
 
@@ -218,7 +218,7 @@
         "name": "Clarks Men's Desert Trek Oxford",
         "description": "Black Suede, Imported, Crepe Sole",
         "price": "$150.00",
-        "img_src": "https://storage.cloud.google.com/shopcart-uploads/clarks-shoe.png",
+        "img_src": "clarks-shoe.png",
         "isDeal":true,
         "isBestSeller":true
 
@@ -228,7 +228,7 @@
         "name": "Nike AirForce 1 Shoe",
         "description": "White, Rubber Sole, 100% Polyester",
         "price": "$150.00",
-        "img_src": "https://storage.cloud.google.com/shopcart-uploads/nike-air-force.png",
+        "img_src": "nike-air-force.png",
         "isDeal":false,
         "isBestSeller":true
 
@@ -238,7 +238,7 @@
         "name": "SAMSUNG Galaxy S23 Ultra",
         "description": "512GB, 200MP Camera, Night Mode, Long Battery Life, S Pen",
         "price": "$1300.00",
-        "img_src": "https://storage.cloud.google.com/shopcart-uploads/samsung-s23.png",
+        "img_src": "samsung-s23.png",
         "isDeal":true,
         "isBestSeller":false
 
@@ -248,7 +248,7 @@
         "name": "tomtoc Travel Backpack 40L",
         "description": "TSA Friendly Flight Approved Carry-on Luggage Hand Backpack",
         "price": "$89.99",
-        "img_src": "https://storage.cloud.google.com/shopcart-uploads/tomtoc.png",
+        "img_src": "tomtoc.png",
         "isDeal":true,
         "isBestSeller":false
 

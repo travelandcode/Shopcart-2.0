@@ -6,6 +6,7 @@ import CategorySection from '../components/Categories/CategorySection';
 import BrandSection from '../components/Brands/BrandSection';
 import DiscountBanner2 from '../components/DiscountBanner2';
 import BestSellers from '../components/BestSellers';
+import Stores from '../components/Stores/Stores';
 
 function Home () {
     return (
@@ -18,6 +19,7 @@ function Home () {
             <BrandSection />
             <DiscountBanner2 />
             <BestSellers />
+            <Stores />
         </div>
     );
 }
