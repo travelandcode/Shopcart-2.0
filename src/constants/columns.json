@@ -1,0 +1,18 @@
+[
+    {
+        "columnName": "Department" ,
+        "items": ["Fashion", "Education Product", "Frozen Food", "Beverages", "Organic Grocery", "Office Supplies", "Beauty Products", "Books", "Electronics & Gadgets", "Travel Accessories", "Fitness", "Sneakers", "Toys", "Furniture"]
+    },
+    {
+        "columnName": "About Us",
+        "items": ["About Shopcart", "Careers", "News & Blog", "Help", "Press Center", "Shop By Location", "Shopcart Brands", "Affiliate & Brands", "Ideas & Guides"]
+    },
+    {
+        "columnName": "Services",
+        "items": ["Gift Card", "Shipping & Delivery", "Order Pickup", "Account Signup"]
+    },
+    {
+        "columnName": "Help",
+        "items": ["Shopcart Help", "Returns", "Track Orders", "Contact Us", "Feedback", "Security & Fraud"]
+    }
+]

@@ -8,6 +8,7 @@ import DiscountBanner2 from '../components/DiscountBanner2';
 import BestSellers from '../components/BestSellers';
 import Stores from '../components/Stores/Stores';
 import Services from '../components/Services/Services';
+import Footer from '../components/Footer/Footer'
 
 function Home () {
     return (
@@ -22,6 +23,7 @@ function Home () {
             <BestSellers />
             <Stores />
             <Services />
+            <Footer />
         </div>
     );
 }
