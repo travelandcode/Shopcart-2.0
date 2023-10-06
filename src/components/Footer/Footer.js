@@ -7,7 +7,7 @@ function Footer(){
     const paymentOptions = PaymentOptions
     const columns = Columns
     return(
-        <div className="[ footer ][ h-[637px] w-[1376px] ][ flex flex-col ][ mx-auto ][ px-[40px] ][ overflow-hidden ]">
+        <div className="[ footer ][ h-[637px] w-[1360px] ][ flex flex-col ][ mx-auto ][ px-[40px] ][ overflow-hidden ]">
             <div className="[ footer-top ][ pt-[60px] ][ pb-[30px] ][ border-y border-solid border-[#231f1e33] ]">
                 <div className="[ footer-columns ][ items-start ][ h-[447px] ][ grid grid-flow-col gap-[16px] ]">
                     <div className="[ footer-content ][ w-[538px]  h-[318px] ][ mb-[30px] ][ flex flex-col ]">

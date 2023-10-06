@@ -4,7 +4,7 @@ function Store(props){
     const brandName = props.brandName
     const brandImg = props.brandImg
     return (
-        <div className="[ store ][ bg-[#f5f6f6] ][ h-[375px] w-[302px] ][ relative ][ z-0 ][ rounded-[10px] ][ flex flex-col ]">
+        <div className="[ store ][ bg-[#f5f6f6] ][ h-[375px] w-[302px] ][ mx-auto ][ relative ][ z-0 ][ rounded-[10px] ][ flex flex-col ]">
             <div className="[ store-img-container ][ rounded-[10px] ][ overflow-hidden ]">
                 <img className="[ store-img ][ w-full h-[240px] ][ transition-transform hover:scale-[1.2] ][ rouned-[10px] ]" src={img}/>
             </div>
@@ -17,8 +17,8 @@ function Store(props){
                     <p className="[ store-category ][ text-[12px] text-[#848181] ][ font-medium ]">Perfume</p>
                 </div>
                 <div className="[ delivery-container ][ flex flex-row ][ items-center ]">
-                    <img src="https://uploads-ssl.webflow.com/63e857eaeaf853471d5335ff/63ea2eeefd8efb290e2d7d78_Icon.png" className="[ delivery-img ][ w-[13px] h-[13px] ] "/>
-                    <p className="[ delivery-description ][ ml-2 ][ text-[#C34482] text-delivery-description ]">Delivery within 24 hours</p>
+                    <img className="[ delivery-img ][ w-[13px] h-[13px] ]" src="https://uploads-ssl.webflow.com/63e857eaeaf853471d5335ff/63ea2eeefd8efb290e2d7d78_Icon.png"  />
+                    <p className="[ delivery-description ][ ml-2 ][ text-[#C34482] text-[12px] leading-[160%] ]">Delivery within 24 hours</p>
                 </div>
             </div>
         </div>
