@@ -19,9 +19,9 @@ function Services(){
         }
     ]
     return (
-        <div className="[ service-section ][ w-[1460px] h-[670px] ][ mx-auto ][ px-[40px] pb-[100px] ][ flex flex-col ]">
+        <div className="[ service-section ][ w-[1360px] h-[670px] ][ mx-auto ][ px-[40px] pb-[100px] ][ flex flex-col ]">
             <h3 className="[ service-title ][ text-[#231f1e] font-[Eina02,sans-serif] text-[28px] font-bold ][ mb-[40px] ]">Services To Help You Shop</h3>
-            <div className="[ services-container ][ w-[1376px] h-full ][ grid grid-flow-col gap-[16px] ]">
+            <div className="[ services-container ][ w-[1280px] h-full ][ grid grid-flow-col gap-[16px] ][ mx-auto ]">
                 {services.map(service =>(
                     <Service img={service.img} description={service.description} title={service.title} />
                 ))}

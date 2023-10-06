@@ -1,14 +1,13 @@
 import NavBar from '../components/NavBar';
 import TopNavBar from '../components/TopNavBar';
-import Deals from '../components/Deals';
 import DiscountBanner from '../components/DiscountBanner';
 import CategorySection from '../components/Categories/CategorySection';
 import BrandSection from '../components/Brands/BrandSection';
 import DiscountBanner2 from '../components/DiscountBanner2';
-import BestSellers from '../components/BestSellers';
 import Stores from '../components/Stores/Stores';
 import Services from '../components/Services/Services';
 import Footer from '../components/Footer/Footer'
+import Carousel from '../components/Carousel';
 
 function Home () {
     return (
@@ -17,10 +16,10 @@ function Home () {
             <NavBar/>
             <DiscountBanner/>
             <CategorySection/>
-            <Deals/>
+            <Carousel type="DEALS"/>
             <BrandSection />
             <DiscountBanner2 />
-            <BestSellers />
+            <Carousel type="BEST SELLERS" />
             <Stores />
             <Services />
             <Footer />
