@@ -10,23 +10,23 @@ function Product(props){
     !img_src.includes("https") ? img = require("../images/"+img_src) : img = img_src
 
     return (
-        <div className="[ product-card ][ h-[446px] w-[410px] ][ mx-auto ][ flex flex-col ]">
-            <div className="[ product-container ][ bg-[#f5f6f6] ][ rounded-[10px] ][ relative ] ">
-                    <img className="[ product-img  ][ mx-auto my-auto ][ transition-transform hover:scale-[1.2] ]" src={img} loading="lazy"/>
-                <div className="[ product-wishlist ][ h-[40px] w-[40px] ][ rounded-full ][ flex absolute ][ top-[16px] right-[16px] ][ bg-[#fff] hover:bg-[#f9dcdc] ]">
+        <div className="[ product-card ][ h-[446px] w-[410px] phone:w-[150px] phone:h-auto tablet:w-[300px] ][ mx-auto ][ flex flex-col ]">
+            <div className="[ product-container ][ bg-[#f5f6f6] ][ rounded-[10px] ][ relative ][ phone:h-1/2 ] ">
+                    <img className="[ product-img  ][ phone:h-[120px] phone:w-[120px] ][ mx-auto my-auto ][ transition-transform hover:scale-[1.2] ]" src={img} loading="lazy"/>
+                <div className="[ product-wishlist ][ h-[40px] w-[40px] phone:h-[30px] phone:w-[30px] ][ rounded-full ][ flex absolute ][ top-[16px] right-[16px] phone:top-[10px] phone:right-[10px] ][ bg-[#fff] hover:bg-[#f9dcdc] ]">
                     <svg className="[ wishlist-icon ][ mx-auto my-auto ][ h-[17px] w-[20px] ][ relative ]" xmlns="http://www.w3.org/2000/svg" fill="none">
                         <path d="M9.99984 2.15022C12.1593 0.215364 15.4804 0.285555 17.5556 2.36079C19.7035 4.50867 19.7035 7.99108 17.5556 10.139L11.2962 16.3984C10.5802 17.1143 9.41944 17.1143 8.70348 16.3984L2.44408 10.139C0.2962 7.99108 0.2962 4.50867 2.44408 2.36079C4.51932 0.285555 7.84033 0.215364 9.99984 2.15022ZM11.0738 3.65715L10.648 4.08291C10.29 4.44089 9.70964 4.44089 9.35166 4.08291L8.9259 3.65715C7.49397 2.22523 5.17237 2.22523 3.74045 3.65715C2.30852 5.08908 2.30852 7.41068 3.74045 8.8426L9.99984 15.102L16.2592 8.8426C17.6912 7.41068 17.6912 5.08908 16.2592 3.65715C14.8273 2.22523 12.5057 2.22523 11.0738 3.65715Z" fill="#4F4F4F"/>
                     </svg>
                 </div>
             </div>
-            <div className="[ product-content ][ flex flex-col ]">
-                <div className="[ product-title-wrapper ][ flex flex-row ][ justify-between ][ mt-[16px] mb-[12px] ]">
-                    <h3 className="[ product-title ][ font-[Inter,sans-serif] text-[18px] font-semibold ]">{name}</h3>
-                    <div className="[ product-cost ][ font-[Inter,sans-serif] text-[18px] font-semibold ]">
+            <div className="[ product-content ][ flex flex-col ][ phone:h-1/2 ][ phone:px-[10px] ]">
+                <div className="[ product-title-wrapper ][ flex flex-row ][ justify-between ][ mt-[16px] mb-[12px] phone:mt-[12px] phone:mb-[10px] ]">
+                    <h3 className="[ product-title ][ font-[Inter,sans-serif] text-[18px] font-semibold phone:text-[13px] phone:text-left ][ phone:max-w-[75px] phone:overflow-hidden phone:truncate ]">{name}</h3>
+                    <div className="[ product-cost ][ font-[Inter,sans-serif] text-[18px] font-semibold phone:text-[13px] ]">
                        {price}
                     </div>
                 </div>
-                <div className="[ product-description ][ text-[12px] ][ text-[#333] ][ flex ][ mb-[10px] ] ">
+                <div className="[ product-description ][ text-[12px] phone:text-left ][ text-[#333] ][ flex ][ mb-[10px] ][ phone:hidden ]">
                     {description}
                 </div>
                 <div className="[ product-ratings ][ flex flex-row ][ mb-[15px] ]">
@@ -51,7 +51,7 @@ function Product(props){
                         (121)
                     </div>
                 </div>
-                <div className="[ add-to-cart-btn ][ w-[122px] h-[40px] ][ rounded-[50px] ][ border border-solid border-[#231F1E] ][ hover:bg-[#003d29] hover:text-white ][ flex ]">
+                <div className="[ add-to-cart-btn ][ w-[122px] h-[40px] phone:w-[100px] ][ rounded-[50px] ][ border border-solid border-[#231F1E] ][ hover:bg-[#003d29] hover:text-white ][ flex ]">
                     <p className="[ add-to-cart-txt ][ mx-auto my-auto ][ text-[14px] font-semibold ] ">Add to Cart</p>
                 </div>
             </div>

@@ -2,7 +2,7 @@ function FooterColumn(props) {
     const columnName = props.columnName
     const items = props.items
     return (
-        <div className="[ footer-column ]">
+        <div className="[ footer-column ][ phone:hidden ][ tablet:hidden ]">
             <h2 className="[ footer-column-name ][ mb-[23px] ][ font-[Inter,sans-serif] text-[18px] font-semibold text-[#000] text-left ]">{columnName}</h2>
             <ul role="list" className="[ footer-menu-list ]">
                 {items.map((item,index) =>(

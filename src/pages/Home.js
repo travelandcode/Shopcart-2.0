@@ -1,5 +1,6 @@
 import NavBar from '../components/NavBar';
-import TopNavBar from '../components/TopNavBar';
+import TopNavBar from '../components/TopNavBar'
+import MobileTopNavBar from '../components/Mobile/MobileTopNavBar';
 import DiscountBanner from '../components/DiscountBanner';
 import CategorySection from '../components/Categories/CategorySection';
 import BrandSection from '../components/Brands/BrandSection';
@@ -8,12 +9,15 @@ import Stores from '../components/Stores/Stores';
 import Services from '../components/Services/Services';
 import Footer from '../components/Footer/Footer'
 import Carousel from '../components/Carousel';
+import MobileNavBar from '../components/Mobile/MobileNavBar';
 
 function Home () {
     return (
-        <div className="[ home ][ flex flex-col ][ bg-white ][ h-full ][ overscroll-auto ]">
-            <TopNavBar/>
-            <NavBar/>
+        <div className="[ home ][ flex flex-col ][ bg-white ][ h-full ][ overscroll-auto ][ w-screen ]">
+            <MobileTopNavBar/>
+            <MobileNavBar/>
+            <TopNavBar />
+            <NavBar />
             <DiscountBanner/>
             <CategorySection/>
             <Carousel type="DEALS"/>
