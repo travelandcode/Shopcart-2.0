@@ -3,6 +3,7 @@ import { useState } from "react";
 import LeftArrow from "../images/left.png"
 import RightArrow from "../images/right.png"
 import Products from '../products.json'
+import { useMediaQuery } from "react-responsive";
 
 function Carousel(props) {
 
@@ -10,8 +11,10 @@ function Carousel(props) {
     const [startIndex, setStartIndex] = useState(0);
     const type = props.type
     const title = type == 'DEALS' ? 'Todays Best Deals For You' : 'Best Sellers'
+    const isPhoneScreen = useMediaQuery({ minWidth:0, maxWidth: 640});
+    const isTabletScreen = useMediaQuery({ minWidth:641, maxWidth: 1023})
     const carouselProducts = type == 'DEALS' ? products.filter((product) => product.isDeal) : products.filter((product) => product.isBestSeller) 
-    const productsToShow = carouselProducts.slice(startIndex, startIndex + 3)  
+    const productsToShow = carouselProducts.slice(startIndex, startIndex + ( isTabletScreen || isPhoneScreen ? 2 : 3))
 
     const previousPage = () => {
     if (startIndex > 0) {
@@ -26,16 +29,16 @@ function Carousel(props) {
     };
 
     return(
-        <div className="[ carousel-container ][ h-[578px] w-[1448px] ][ flex flex-col ][ mx-auto ]">
-            <h3 className="[ carousel-txt ][ text-[28px] leading-[100%] font-bold ][ mb-[40px] ][ text-center ] ">{title}</h3>
+        <div className="[ carousel-container ][ h-[578px] w-[1448px] phone:w-screen phone:h-auto tablet:w-screen ][ flex flex-col ][ mx-auto ][ phone:px-[10px] tablet:px-[10px] ]">
+            <h3 className="[ carousel-txt ][ text-[28px] leading-[100%] font-bold phone:text-[20px] ][ mb-[40px] phone:mb-[20px] ][ text-center ] ">{title}</h3>
             <div className="[ products-wrapper ][ flex flex-row ][ mx-auto ]">
-                <img onClick={previousPage} className={`[ left-arrow ][ w-[25px] h-[25px] ][ my-auto ][ mr-[24px] ] ${startIndex === 0 ? 'cursor-default' : 'hover:cursor-pointer '}`} src={LeftArrow} />
-                <div className="[ products-display ][ w-[1280px] ][ mx-auto ][ grid grid-flow-col gap-[24px]]">
+                <img onClick={previousPage} className={`[ left-arrow ][ w-[25px] h-[25px] phone:w-[15px] phone:h-[15px] tablet:w-[20px] tablet:h-[20px] ][ my-auto ][ mr-[24px] phone:mr-[5px] tablet:mr-[10px] ] ${startIndex === 0 ? 'cursor-default' : 'hover:cursor-pointer '}`} src={LeftArrow} />
+                <div className="[ products-display ][ w-[1280px] phone:w-[320px] tablet:w-[740px] ][ mx-auto ][ grid grid-flow-col gap-[24px] phone:gap-[10px] ]">
                 {productsToShow.map(product=> (
                         <Product  key={product.id} id={product.id} name={product.name} description={product.description} price={product.price} img={product.img_src} />
                     ))}
                 </div>  
-                <img onClick={nextPage} className={`[ right-arrow ][ w-[25px] h-[25px] ][ ml-[24px] ][ my-auto ] ${startIndex + 3 >= products.length ? 'cursor-default' : 'hover:cursor-pointer'}`} src={RightArrow} />
+                <img onClick={nextPage} className={`[ right-arrow ][ w-[25px] h-[25px] phone:w-[15px] phone:h-[15px] tablet:w-[20px] tablet:h-[20px] ][ ml-[24px] phone:ml-[5px] tablet:ml-[10px] ][ my-auto ] ${startIndex + 3 >= products.length ? 'cursor-default' : 'hover:cursor-pointer'}`} src={RightArrow} />
             </div>
         </div>
     );
