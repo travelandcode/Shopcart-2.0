@@ -52,7 +52,7 @@ function NavBar () {
                     </div>
                 </div>
                 <div className="[ nav-right-content ][ flex flex-row ][ h-[24px] ][ my-auto ]">
-                    <a href="#" className="[ account-container ][ h-[24px] w-[90px] ][ flex flex-row ]">
+                    <a href="http://localhost:3001/auth/twitter" className="[ account-container ][ h-[24px] w-[90px] ][ flex flex-row ]">
                         <img className="[ account-icon ][ h-full w-[24px] ][ mr-[11px] ][ mx-auto ]" src="https://uploads-ssl.webflow.com/63e857eaeaf853471d5335ff/63eb3dec9d6ee83660ebe1de_user.png" />
                         <p className="[ account-txt ][ text-[#231f1e] text-[16px] font-medium leading-[20px] tracking-[.25px] ]">Account</p>
                     </a>
