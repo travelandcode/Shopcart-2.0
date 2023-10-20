@@ -1,8 +1,8 @@
-import Product from "./Product";
+import Product from "./product";
 import { useState } from "react";
-import LeftArrow from "../images/left.png"
-import RightArrow from "../images/right.png"
-import Products from '../products.json'
+import LeftArrow from "../../images/left.png"
+import RightArrow from "../../images/right.png"
+import Products from '../../constants/products.json'
 import { useMediaQuery } from "react-responsive";
 
 function Carousel(props) {

@@ -1,5 +1,5 @@
-import StoresData from '../../constants/stores.json' 
-import Store from './Store'
+import StoresData from '../../../constants/stores.json' 
+import Store from './store'
 
 function Stores(){
 

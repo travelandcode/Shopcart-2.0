@@ -1,5 +1,5 @@
-import Category from "./Category"
-import Categories from "../../constants/categories.json"
+import Category from "./category"
+import Categories from "../../../constants/categories.json"
 
 function CategorySection() {
     const categories = Categories

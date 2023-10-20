@@ -1,15 +1,15 @@
-import NavBar from '../components/NavBar';
-import TopNavBar from '../components/TopNavBar'
-import MobileTopNavBar from '../components/Mobile/MobileTopNavBar';
-import DiscountBanner from '../components/DiscountBanner';
-import CategorySection from '../components/Categories/CategorySection';
-import BrandSection from '../components/Brands/BrandSection';
-import DiscountBanner2 from '../components/DiscountBanner2';
-import Stores from '../components/Stores/Stores';
-import Services from '../components/Services/Services';
-import Footer from '../components/Footer/Footer'
-import Carousel from '../components/Carousel';
-import MobileNavBar from '../components/Mobile/MobileNavBar';
+import NavBar from '../components/navbar';
+import TopNavBar from '../components/top_navbar'
+import MobileTopNavBar from '../components/mobile/mobile_top_navbar';
+import DiscountBanner from '../components/home/discount_banner';
+import CategorySection from '../components/home/categories/category_section';
+import BrandSection from '../components/home/brands/brand_section';
+import DiscountBanner2 from '../components/home/discount_banner_2';
+import Stores from '../components/home/stores/stores_section';
+import Services from '../components/home/services/services_section';
+import Footer from '../components/footer/footer_section'
+import Carousel from '../components/home/carousel';
+import MobileNavBar from '../components/mobile/mobile_navbar';
 
 function Home () {
     return (
