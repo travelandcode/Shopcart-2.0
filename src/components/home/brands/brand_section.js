@@ -1,5 +1,5 @@
 import Brand from "./brand"
-import Brands from "../../constants/brands.json"
+import Brands from "../../../constants/brands.json"
 import { useMediaQuery } from "react-responsive";
 
 function BrandSection(){

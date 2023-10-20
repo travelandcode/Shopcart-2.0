@@ -1,4 +1,4 @@
-import StoresData from '../../constants/stores.json' 
+import StoresData from '../../../constants/stores.json' 
 import Store from './store'
 
 function Stores(){

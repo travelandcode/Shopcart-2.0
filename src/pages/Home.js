@@ -2,10 +2,10 @@ import NavBar from '../components/navbar';
 import TopNavBar from '../components/top_navbar'
 import MobileTopNavBar from '../components/mobile/mobile_top_navbar';
 import DiscountBanner from '../components/home/discount_banner';
-import CategorySection from '../components/categories/category_section';
-import BrandSection from '../components/brands/brand_section';
+import CategorySection from '../components/home/categories/category_section';
+import BrandSection from '../components/home/brands/brand_section';
 import DiscountBanner2 from '../components/home/discount_banner_2';
-import Stores from '../components/stores/stores_section';
+import Stores from '../components/home/stores/stores_section';
 import Services from '../components/home/services/services_section';
 import Footer from '../components/footer/footer_section'
 import Carousel from '../components/home/carousel';
