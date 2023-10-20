@@ -1,4 +1,16 @@
+import React, { useState } from 'react';
+import LoginModal from "./LoginModal/LoginModal";
+
 function NavBar () {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    
+    const openModal = () => {
+      setIsModalOpen(true);
+    };
+  
+    const closeModal = () => {
+      setIsModalOpen(false);
+    };
     return (
         <div className="[ navbar ][ py-[15px] ][ bg-[#fff] ][ w-[1360px] h-[82px] tablet:w-[760px] ][ px-[40px] tablet:px-[20px] ][ flex flex-row ][ border-b-2 border-[#cccccc] ][ mx-auto ][ phone:hidden ]">
             <div className="[ nav-bar-container ][ flex flex-row [ mx-auto ][ w-[1280px] tablet:w-full ][ justify-between ] ">
@@ -52,16 +64,16 @@ function NavBar () {
                     </div>
                 </div>
                 <div className="[ nav-right-content ][ flex flex-row ][ h-[24px] ][ my-auto ]">
-                    <a href="http://localhost:3001/auth/twitter" className="[ account-container ][ h-[24px] w-[90px] ][ flex flex-row ]">
+                    <a onClick={openModal} className="[ account-container ][ h-[24px] w-[90px] ][ flex flex-row ][ cursor-pointer ]">
                         <img className="[ account-icon ][ h-full w-[24px] ][ mr-[11px] ][ mx-auto ]" src="https://uploads-ssl.webflow.com/63e857eaeaf853471d5335ff/63eb3dec9d6ee83660ebe1de_user.png" />
                         <p className="[ account-txt ][ text-[#231f1e] text-[16px] font-medium leading-[20px] tracking-[.25px] ]">Account</p>
                     </a>
-                    <a href="#" className="[ cart-container ][ h-[24px] w-[100px] ][ flex flex-row ]">
+                    <a href="http://localhost:3001/auth/google" className="[ cart-container ][ h-[24px] w-[100px] ][ flex flex-row ]">
                         <img className="[ cart-icon ][ h-full w-[24px] ][ mr-[11px] ][ mx-auto ]" src="https://uploads-ssl.webflow.com/63e857eaeaf853471d5335ff/63eb3dec9b865e78d4ff6b8d_shopping-cart-add.png"/>
                         <p className="[ cart-txt ][ text-[#231f1e] text-[16px] font-medium leading-[20px] tracking-[.25px] ]">Cart</p>
                     </a>
-
                 </div>
+                <LoginModal onOpen={isModalOpen} onClose={closeModal} />
             </div>
         </div>
     );
