@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import LoginModal from "./LoginModal/LoginModal";
+import LoginModal from "./login-modal/login_modal";
 
 function NavBar () {
     const [isModalOpen, setIsModalOpen] = useState(false);

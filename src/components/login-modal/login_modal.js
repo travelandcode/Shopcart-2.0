@@ -1,4 +1,4 @@
-import LoginModalButton from "./LoginModalButton";
+import LoginModalButton from "./login_modal_button";
 
 function LoginModal(props){
   const isOpen = props.onOpen
