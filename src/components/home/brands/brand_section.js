@@ -1,4 +1,4 @@
-import Brand from "../Brands/Brand"
+import Brand from "./brand"
 import Brands from "../../constants/brands.json"
 import { useMediaQuery } from "react-responsive";
 

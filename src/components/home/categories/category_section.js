@@ -1,4 +1,4 @@
-import Category from "./Category"
+import Category from "./category"
 import Categories from "../../constants/categories.json"
 
 function CategorySection() {

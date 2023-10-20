@@ -1,7 +1,7 @@
-import PaymentOptions from "../../constants/paymentOptions.json"
-import FooterPaymentOptions from "./FooterPaymentOptions"
+import PaymentOptions from "../../constants/payment_options.json"
+import FooterPaymentOptions from "./footer_payment_option"
 import Columns from '../../constants/columns.json'
-import FooterColumn from './FooterColumn'
+import FooterColumn from './footer_column'
 
 function Footer(){
     const paymentOptions = PaymentOptions
