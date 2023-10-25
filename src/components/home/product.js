@@ -6,7 +6,7 @@ function Product(props){
     const description = props.description
     let img = '';
 
-    !img_src.includes("https") ? img = require("../../images"+img_src) : img = img_src
+    !img_src.includes("https") ? img = require("../../assets/"+img_src) : img = img_src
 
     return (
         <div className="[ product-card ][ h-[446px] w-[410px] phone:w-[150px] phone:h-auto tablet:w-[300px] ][ mx-auto ][ flex flex-col ]">

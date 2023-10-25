@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import LoginModal from "./login-modal/login_modal";
 import { api } from '../service/axios';
-import ProfilePic from '../images/software-developer.jpg'
+import ProfilePic from '../assets/software-developer.jpg'
 import { useUser, ACTIONS } from '../providers/user_provider';
 
 function Profile(){
