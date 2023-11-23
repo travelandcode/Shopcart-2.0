@@ -8,7 +8,11 @@ function CartTotal(){
     const [ deliveryCost, setDeliveryCost ] = useState(0.00);
     const handleExpressChange = (expressValue) => {
         setIsExpress(expressValue);
+        handleDeliveryCost(expressValue);
     };
+    const handleDeliveryCost = (value) => {
+        value ? setDeliveryCost(9.99) : setDeliveryCost(0.00);
+    }
 
     return (
         <div className="[ cart-total ][ flex flex-col ][ px-[20px] py-[20px] ][ rounded-[15px] ][ z-[1] ][ w-[300px] h-[575px] ][ border-2 border-solid border-[#D3D3D3] ][ bg-white ]">
@@ -41,7 +45,7 @@ function CartTotal(){
                         <p className='[ delivery-label ][ text-[#888888] text-[14px] font-[Roboto] ]'>Delivery</p>
                         <FontAwesomeIcon className='[ my-auto ml-1 ]' icon={faCircleInfo} style={{color: "#888888",}} />
                     </div>
-                    <p className='[ delivery-txt ][ text-[#888888] text-[14px] font-[Pacifico] ]'>{ isExpress ? '$9.99' : '$0.00' }</p>
+                    <p className='[ delivery-txt ][ text-[#888888] text-[14px] font-[Pacifico] ]'>{`$${deliveryCost}`}</p>
                 </div>
                 <div className='[ tax-line ][ mt-2 ][ flex flex-row ][ justify-between ]'>
                 <div className='[ tax-label-section ][ flex flex-row ]'>
