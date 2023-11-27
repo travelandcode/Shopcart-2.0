@@ -7,6 +7,7 @@ import './fonts/Roboto-Regular.ttf';
 import './fonts/Lobster-Regular.ttf';
 import './fonts/Pacifico-Regular.ttf';
 import './fonts/Satisfy-Regular.ttf';
+import './fonts/Assistant-Regular.ttf'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

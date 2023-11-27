@@ -1,16 +1,20 @@
+import { useCart } from "../../providers/cart_provider";
+
 //function should take in product name, price, description, and image
 function Product(props){
     const name = props.name
     const price = props.price
     const img_src = props.img
     const description = props.description
+    const id = props.id
     let img = '';
+    const { increaseCartQuantity } = useCart()
 
     !img_src.includes("https") ? img = require("../../assets/"+img_src) : img = img_src
 
     return (
         <div className="[ product-card ][ h-[446px] w-[410px] phone:w-[150px] phone:h-auto tablet:w-[300px] ][ mx-auto ][ flex flex-col ]">
-            <div className="[ product-container ][ bg-[#f5f6f6] ][ rounded-[10px] ][ relative ][ phone:h-1/2 ] ">
+            <div className="[ product-container ][ bg-[#E0E0E0] ][ rounded-[10px] ][ relative ][ phone:h-1/2 ] ">
                     <img className="[ product-img  ][ phone:h-[120px] phone:w-[120px] ][ mx-auto my-auto ][ transition-transform hover:scale-[1.2] ]" src={img} loading="lazy"/>
                 <div className="[ product-wishlist ][ h-[40px] w-[40px] phone:h-[30px] phone:w-[30px] ][ rounded-full ][ flex absolute ][ top-[16px] right-[16px] phone:top-[10px] phone:right-[10px] ][ bg-[#fff] hover:bg-[#f9dcdc] ]">
                     <svg className="[ wishlist-icon ][ mx-auto my-auto ][ h-[17px] w-[20px] ][ relative ]" xmlns="http://www.w3.org/2000/svg" fill="none">
@@ -22,7 +26,7 @@ function Product(props){
                 <div className="[ product-title-wrapper ][ flex flex-row ][ justify-between ][ mt-[16px] mb-[12px] phone:mt-[12px] phone:mb-[10px] ]">
                     <h3 className="[ product-title ][ font-[Inter,sans-serif] text-[18px] font-semibold phone:text-[13px] phone:text-left ][ phone:max-w-[75px] phone:overflow-hidden phone:truncate ]">{name}</h3>
                     <div className="[ product-cost ][ font-[Inter,sans-serif] text-[18px] font-semibold phone:text-[13px] ]">
-                       {price}
+                       ${parseFloat(price).toFixed(2)}
                     </div>
                 </div>
                 <div className="[ product-description ][ text-[12px] phone:text-left ][ text-[#333] ][ flex ][ mb-[10px] ][ phone:hidden ]">
@@ -50,9 +54,9 @@ function Product(props){
                         (121)
                     </div>
                 </div>
-                <div className="[ add-to-cart-btn ][ w-[122px] h-[40px] phone:w-[100px] ][ rounded-[50px] ][ border border-solid border-[#231F1E] ][ hover:bg-[#003d29] hover:text-white ][ flex ]">
+                <button onClick={()=>{increaseCartQuantity(id)}} className="[ add-to-cart-btn ][ w-[122px] h-[40px] phone:w-[100px] ][ rounded-[50px] ][ border border-solid border-[#231F1E] ][ hover:bg-[#003d29] hover:text-white ][ flex ]">
                     <p className="[ add-to-cart-txt ][ mx-auto my-auto ][ text-[14px] font-semibold ] ">Add to Cart</p>
-                </div>
+                </button>
             </div>
         </div>
     );

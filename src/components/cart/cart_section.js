@@ -1,12 +1,11 @@
-import CartProducts from "./cart_products";
+import CartDisplay from "./cart_display";
 import CartTotal from "./cart_total";
 
 function CartSection(){
+
     return(
-        <div className="[ cart-section ][ flex flex-row ][ mt-[40px] h-screen ][ px-[80px] ]">
-            <div className="[ cart-products-section ]">
-            
-            </div>
+        <div className="[ cart-section ][ flex flex-row ][ mt-[40px] mb-[40px] ][ px-[80px] ][ mx-auto ]">
+            <CartDisplay />
             <CartTotal />
         </div>
     );

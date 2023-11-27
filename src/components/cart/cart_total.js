@@ -2,20 +2,35 @@ import DeliverySwitch from './delivery_switch';
 import { useState } from "react";
 import { faCircleInfo } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useCart } from '../../providers/cart_provider';
+import { useProduct } from '../../providers/product_provider';
 
 function CartTotal(){
     const [isExpress, setIsExpress] = useState(false);
     const [ deliveryCost, setDeliveryCost ] = useState(0.00);
+    const [ discountCost, setDiscountCost ] = useState(0.00)
     const handleExpressChange = (expressValue) => {
         setIsExpress(expressValue);
         handleDeliveryCost(expressValue);
     };
+
+    const { cartProducts } = useCart()
+    const { storeProducts } = useProduct()
     const handleDeliveryCost = (value) => {
         value ? setDeliveryCost(9.99) : setDeliveryCost(0.00);
     }
 
+    const subTotal = cartProducts.reduce((total, cartItem) => {
+        const item = storeProducts.find(i => i.id === cartItem.id)
+        return total + (item?.price || 0) * cartItem.quantity
+      }, 0)
+    
+    const tax = subTotal * 0.175
+    
+    const total = subTotal + deliveryCost - discountCost + tax
+
     return (
-        <div className="[ cart-total ][ flex flex-col ][ px-[20px] py-[20px] ][ rounded-[15px] ][ z-[1] ][ w-[300px] h-[575px] ][ border-2 border-solid border-[#D3D3D3] ][ bg-white ]">
+        <div className="[ cart-total ][ flex flex-col ][ px-[20px] py-[20px] ][ ml-[50px] ][ rounded-[15px] ][ z-[1] ][ w-[300px] h-[575px] ][ border-2 border-solid border-[#D3D3D3] ][ bg-white ]">
             <p className=" [ delivery-txt ][ text-[20px] text-left ][ mb-[10px] ][ font-[Pacifico] font-normal text-[#404040] ]:">Delivery</p>
             <DeliverySwitch onExpressChange={handleExpressChange} />
             <div className='[ delivery-date-section ][ flex flex-row ][ mb-[30px] ]'>
@@ -34,11 +49,11 @@ function CartTotal(){
             <div className='[ subtotal-section ][ py-[20px] ][ border-b-2 border-[#BEBEBE] border-dashed ]'>
                 <div className='[ subtotal-line ][ flex flex-row ][ justify-between ]'>
                     <p className='[ subtotal-label ][ text-[18px] font-[Roboto] text-[#404040] ]'>Subtotal</p>
-                    <p className='[ subtotal-txt ][ text-[18px] font-[Pacifico] text-[#404040] ]'>$80.96</p>
+                    <p className='[ subtotal-txt ][ text-[18px] font-[Pacifico] text-[#404040] ]'>${subTotal}</p>
                 </div>
                 <div className='[ discount-line ][ mt-2 ][ flex flex-row ][ justify-between ]'>
                     <p className='[ discount-label ][ text-[#888888] text-[14px] font-[Roboto] ]'>Discount</p>
-                    <p className='[ discount-txt ][ text-[#888888] text-[14px] font-[Pacifico] ]'>$16.19</p>
+                    <p className='[ discount-txt ][ text-[#888888] text-[14px] font-[Pacifico] ]'>${parseFloat(discountCost).toFixed(2)}</p>
                 </div>
                 <div className='[ delivery-line ][ mt-2 ][ flex flex-row ][ justify-between ]'>
                     <div className='[ delivery-label-section ][ flex flex-row ]'>
@@ -52,12 +67,12 @@ function CartTotal(){
                         <p className='[ tax-label ][ text-[#888888] text-[14px] font-[Roboto] ]'>Tax</p>
                         <FontAwesomeIcon className='[ my-auto ml-1 ]' icon={faCircleInfo} style={{color: "#888888",}} />
                     </div>
-                    <p className='[ tax-txt ][ text-[#888888] text-[14px] font-[Pacifico] ]'>$14.00</p>
+                    <p className='[ tax-txt ][ text-[#888888] text-[14px] font-[Pacifico] ]'>${parseFloat(tax).toFixed(2)}</p>
                 </div>
             </div>
             <div className='[ total-section ][ mt-[15px] ][ flex flex-row ][ justify-between ]'>
                 <p className='[ total-label ][ my-auto ][ text-[20px] font-[Roboto] text-[#404040] font-bold ]'>Total</p>
-                <p className='[ total-txt ][ my-auto ][ text-[20px] font-[Pacifico] text-[#404040] font-bold ]'>$78.76</p>
+                <p className='[ total-txt ][ my-auto ][ text-[20px] font-[Pacifico] text-[#404040] font-bold ]'>${parseFloat(total).toFixed(2)}</p>
             </div>
             <div className='[ proceed-btn ][ w-full h-[35px] ][ bg-[#FFA33C] hover:bg-[#F3B664] ][ rounded-[5px] ][ cursor-pointer ][ mt-[10px] ]'>
                 <p className='[ proceed-txt ][ mt-[3px] ][ text-[18px] text-white font-[Lobster] ]'>Proceed To Checkout</p>

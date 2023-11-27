@@ -7,14 +7,14 @@ import CartSection from '../components/cart/cart_section'
 
 function Cart(){
     return(
-        <div className="[ cart ][ flex flex-col ][ bg-white ][ h-full ][ overscroll-auto ][ w-screen ]">
-        <MobileTopNavBar/>
-        <MobileNavBar/>
-        <TopNavBar />
-        <NavBar />
-        <CartSection />
-        <Footer />
-    </div>
+        <div className="[ cart ][ flex flex-col ][ bg-white ][ overscroll-auto ][ w-screen ]">
+            <MobileTopNavBar/>
+            <MobileNavBar/>
+            <TopNavBar />
+            <NavBar />
+            <CartSection />
+            <Footer />
+        </div>
     );
 }
 
