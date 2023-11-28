@@ -4,6 +4,8 @@ import { faCircleInfo } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useCart } from '../../providers/cart_provider';
 import { useProduct } from '../../providers/product_provider';
+import { loadStripe } from '@stripe/stripe-js';
+
 
 function CartTotal(){
     const [isExpress, setIsExpress] = useState(false);
@@ -28,6 +30,36 @@ function CartTotal(){
     const tax = subTotal * 0.175
     
     const total = subTotal + deliveryCost - discountCost + tax
+
+    const handleSubmit = async () =>{
+        try {
+            const stripe = await loadStripe("pk_test_51OHIOsDAGzMNj4W5uwIIqStOW0AdV8Ke3Mtfq2by6u7AApmm1P6TU2s43V2NaW3kGWyhsX1sEhA7BjXrkOsO0kh300rhQtNoVB")
+            // Make a POST request to the specified endpoint
+            const response = await fetch('http://localhost:3001/checkout',
+                {
+                    method: "POST",
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                      },
+                    body: JSON.stringify({cartProducts: cartProducts})
+                }
+            )
+            
+            const session = await response.json()
+            const result = stripe.redirectToCheckout({sessionId: session.session})
+            // Handle the response as needed
+            if(result.error){
+                console.error(result.error)
+            }
+            // You can perform additional actions based on the response if necessary
+        
+          } catch (error) {
+            // Handle errors
+            console.error('Error:', error);
+            // You can perform error handling based on the type of error if needed
+          }
+    }
 
     return (
         <div className="[ cart-total ][ flex flex-col ][ px-[20px] py-[20px] ][ ml-[50px] ][ rounded-[15px] ][ z-[1] ][ w-[300px] h-[575px] ][ border-2 border-solid border-[#D3D3D3] ][ bg-white ]">
@@ -74,7 +106,7 @@ function CartTotal(){
                 <p className='[ total-label ][ my-auto ][ text-[20px] font-[Roboto] text-[#404040] font-bold ]'>Total</p>
                 <p className='[ total-txt ][ my-auto ][ text-[20px] font-[Pacifico] text-[#404040] font-bold ]'>${parseFloat(total).toFixed(2)}</p>
             </div>
-            <div className='[ proceed-btn ][ w-full h-[35px] ][ bg-[#FFA33C] hover:bg-[#F3B664] ][ rounded-[5px] ][ cursor-pointer ][ mt-[10px] ]'>
+            <div onClick={() => handleSubmit()} className='[ proceed-btn ][ w-full h-[35px] ][ bg-[#FFA33C] hover:bg-[#F3B664] ][ rounded-[5px] ][ cursor-pointer ][ mt-[10px] ]'>
                 <p className='[ proceed-txt ][ mt-[3px] ][ text-[18px] text-white font-[Lobster] ]'>Proceed To Checkout</p>
             </div>
             <div className='[ continue-btn ][ w-full h-[35px] ][ mt-[10px] ][ cursor-pointer ][ rounded-[5px] ][ border-2 border-solid border-[#D3D3D3] ][ hover:bg-[#DCDCDC] hover:border-[#DCDCDC] ]'>
