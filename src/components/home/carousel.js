@@ -2,18 +2,20 @@ import Product from "./product";
 import { useState } from "react";
 import LeftArrow from "../../assets/left.png"
 import RightArrow from "../../assets/right.png"
-import Products from '../../constants/products.json'
 import { useMediaQuery } from "react-responsive";
+import { useProduct } from "../../providers/product_provider";
 
 function Carousel(props) {
 
-    const products = Products
+
+    const { storeProducts } = useProduct()
+    const products = storeProducts
     const [startIndex, setStartIndex] = useState(0);
     const type = props.type
-    const title = type == 'DEALS' ? 'Todays Best Deals For You' : 'Best Sellers'
+    const title = type === 'DEALS' ? 'Todays Best Deals For You' : 'Best Sellers'
     const isPhoneScreen = useMediaQuery({ minWidth:0, maxWidth: 640});
     const isTabletScreen = useMediaQuery({ minWidth:641, maxWidth: 1023})
-    const carouselProducts = type == 'DEALS' ? products.filter((product) => product.isDeal) : products.filter((product) => product.isBestSeller) 
+    const carouselProducts = type === 'DEALS' ? products.filter((product) => product.isDeal) : products
     const productsToShow = carouselProducts.slice(startIndex, startIndex + ( isTabletScreen || isPhoneScreen ? 2 : 3))
 
     const previousPage = () => {
@@ -35,7 +37,7 @@ function Carousel(props) {
                 <img onClick={previousPage} className={`[ left-arrow ][ w-[25px] h-[25px] phone:w-[15px] phone:h-[15px] tablet:w-[20px] tablet:h-[20px] ][ my-auto ][ mr-[24px] phone:mr-[5px] tablet:mr-[10px] ] ${startIndex === 0 ? 'cursor-default' : 'hover:cursor-pointer '}`} src={LeftArrow} />
                 <div className="[ products-display ][ w-[1280px] phone:w-[320px] tablet:w-[740px] ][ mx-auto ][ grid grid-flow-col gap-[24px] phone:gap-[10px] ]">
                 {productsToShow.map(product=> (
-                        <Product  key={product.id} id={product.id} name={product.name} description={product.description} price={product.price} img={product.img_src} />
+                        <Product id={product.id} name={product.name} description={product.description} price={product.price} img={product.img_src} />
                     ))}
                 </div>  
                 <img onClick={nextPage} className={`[ right-arrow ][ w-[25px] h-[25px] phone:w-[15px] phone:h-[15px] tablet:w-[20px] tablet:h-[20px] ][ ml-[24px] phone:ml-[5px] tablet:ml-[10px] ][ my-auto ] ${startIndex + 3 >= products.length ? 'cursor-default' : 'hover:cursor-pointer'}`} src={RightArrow} />
