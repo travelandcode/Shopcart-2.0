@@ -37,7 +37,7 @@ function Carousel(props) {
                 <img onClick={previousPage} className={`[ left-arrow ][ w-[25px] h-[25px] phone:w-[15px] phone:h-[15px] tablet:w-[20px] tablet:h-[20px] ][ my-auto ][ mr-[24px] phone:mr-[5px] tablet:mr-[10px] ] ${startIndex === 0 ? 'cursor-default' : 'hover:cursor-pointer '}`} src={LeftArrow} />
                 <div className="[ products-display ][ w-[1280px] phone:w-[320px] tablet:w-[740px] ][ mx-auto ][ grid grid-flow-col gap-[24px] phone:gap-[10px] ]">
                 {productsToShow.map(product=> (
-                        <Product id={product.id} name={product.name} description={product.description} price={product.price} img={product.img_src} />
+                        <Product id={product.id} name={product.name} description={product.description} price={product.price} img={product.img_src[0]} />
                     ))}
                 </div>  
                 <img onClick={nextPage} className={`[ right-arrow ][ w-[25px] h-[25px] phone:w-[15px] phone:h-[15px] tablet:w-[20px] tablet:h-[20px] ][ ml-[24px] phone:ml-[5px] tablet:ml-[10px] ][ my-auto ] ${startIndex + 3 >= products.length ? 'cursor-default' : 'hover:cursor-pointer'}`} src={RightArrow} />
