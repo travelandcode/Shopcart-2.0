@@ -6,6 +6,7 @@ import { CartProvider } from './providers/cart_provider.js';
 import { ProductProvider } from './providers/product_provider.js';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { UserProvider } from './providers/user_provider.js';
+import Product from './pages/store_product.js';
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
             </Route>
             <Route path="/cart">
               <Cart />
+            </Route>
+            <Route path="/product/:id">
+              <Product />
             </Route>
           </BrowserRouter>
           </UserProvider>
