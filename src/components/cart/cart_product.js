@@ -12,7 +12,7 @@ function CartProduct({id}){
     
     const quantity = getProductQuantity(product.id)
     const cost = product.price * quantity
-    const img = !product.img_src.includes("https") ? require("../../assets/"+product.img_src) : product.img_src
+    const img = product.img_src[0]
 
 
     return(

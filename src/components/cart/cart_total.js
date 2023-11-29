@@ -17,9 +17,21 @@ function CartTotal(){
     };
 
     const { cartProducts } = useCart()
+    console.log(cartProducts)
     const { storeProducts } = useProduct()
     const handleDeliveryCost = (value) => {
         value ? setDeliveryCost(9.99) : setDeliveryCost(0.00);
+    }
+
+    const formatDate = () =>{
+        const currentDate = new Date();
+        const date = new Date(currentDate);
+        date.setDate(currentDate.getDate() + (isExpress ? 7 : 14) )
+        const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        const month = monthNames[date.getMonth()];
+        const day = date.getDate();
+        const year = date.getFullYear();
+        return `${month} ${day}, ${year}`;
     }
 
     const subTotal = cartProducts.reduce((total, cartItem) => {
@@ -63,13 +75,16 @@ function CartTotal(){
 
     return (
         <div className="[ cart-total ][ flex flex-col ][ px-[20px] py-[20px] ][ ml-[50px] ][ rounded-[15px] ][ z-[1] ][ w-[300px] h-[575px] ][ border-2 border-solid border-[#D3D3D3] ][ bg-white ]">
-            <p className=" [ delivery-txt ][ text-[20px] text-left ][ mb-[10px] ][ font-[Pacifico] font-normal text-[#404040] ]:">Delivery</p>
+            <p className={`[ delivery-txt ][ text-[20px] text-left ][ mb-[10px] ][ font-[Pacifico] font-normal text-[#404040] ] ${ cartProducts.length === 0 ? 'mb-[10px]': ''}`}>Delivery</p>
             <DeliverySwitch onExpressChange={handleExpressChange} />
-            <div className='[ delivery-date-section ][ flex flex-row ][ mb-[30px] ]'>
-                <p className='[ delivery-date-label ][ font-[Roboto] ][ mr-[5px] ][ text-[14px] text-[#888888] ]'>Delivery date:</p>
-                <p className='[ delivery-date-txt ][ font-[Roboto] ][ text-[14px] text-[#888888] ]'>June 24, 2022</p>
-            </div>
-            <div className='[ promo-area ][ h-[120px] w-full ][ border-y-2 border-[#BEBEBE] border-dashed ][ py-[20px] ] '>
+            {
+                cartProducts.length > 0 &&
+                <div className='[ delivery-date-section ][ flex flex-row ][ mb-[30px] ]'>
+                    <p className='[ delivery-date-label ][ font-[Roboto] ][ mr-[5px] ][ text-[14px] text-[#888888] ]'>Delivery date:</p>
+                    <p className='[ delivery-date-txt ][ font-[Roboto] ][ text-[14px] text-[#888888] ]'>{formatDate()}</p>
+                </div>
+            }
+            <div className={`[ promo-area ][ h-[120px] w-full ][ border-y-2 border-[#BEBEBE] border-dashed ][ py-[20px] ] ${ cartProducts.length === 0 ? 'mt-[10px]': 'mt-[0px]'}`}>
                 <div className='[ promo-code-section ][ w-full h-[40px] ][ border-[2px] border-solid border-[#B8B8B8] ][ rounded-[10px] ][ mb-[5px] ][ flex flex-row ]'>
                     <input className="[ promo-code-input ][ rounded-[10px] ][ w-[75%] ][ px-2 ][ outline-none ][ font-[Lobster] ]" type='text' placeholder="PromoCode" />
                     <div className='[ apply-btn ][ h-full [ w-[25%] ][ rounded-[10px] ][ border-l-[2px] border-solid border-[#B8B8B8] ][ hover:bg-[#DCDCDC] ]'>
@@ -106,13 +121,12 @@ function CartTotal(){
                 <p className='[ total-label ][ my-auto ][ text-[20px] font-[Roboto] text-[#404040] font-bold ]'>Total</p>
                 <p className='[ total-txt ][ my-auto ][ text-[20px] font-[Pacifico] text-[#404040] font-bold ]'>${parseFloat(total).toFixed(2)}</p>
             </div>
-            <div onClick={() => handleSubmit()} className='[ proceed-btn ][ w-full h-[35px] ][ bg-[#FFA33C] hover:bg-[#F3B664] ][ rounded-[5px] ][ cursor-pointer ][ mt-[10px] ]'>
+            <button onClick={() => handleSubmit()} className='[ proceed-btn ][ w-full h-[35px] ][ bg-[#FFA33C] hover:bg-[#F3B664] ][ rounded-[5px] ][ cursor-pointer ][ mt-[10px] ]'>
                 <p className='[ proceed-txt ][ mt-[3px] ][ text-[18px] text-white font-[Lobster] ]'>Proceed To Checkout</p>
-            </div>
-            <div className='[ continue-btn ][ w-full h-[35px] ][ mt-[10px] ][ cursor-pointer ][ rounded-[5px] ][ border-2 border-solid border-[#D3D3D3] ][ hover:bg-[#DCDCDC] hover:border-[#DCDCDC] ]'>
+            </button>
+            <a href='/' className='[ continue-btn ][ w-full h-[35px] ][ mt-[10px] ][ cursor-pointer ][ rounded-[5px] ][ border-2 border-solid border-[#D3D3D3] ][ hover:bg-[#DCDCDC] hover:border-[#DCDCDC] ]'>
                 <p className='[ continue-txt ][ mt-[3px] ][ text-[18px] text-[#808080] font-[Lobster] ]'>Continue Shopping</p>
-
-            </div>
+            </a>
         </div>
     );
 }
