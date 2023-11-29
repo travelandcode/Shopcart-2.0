@@ -39,6 +39,34 @@
   font-weight: 400;
 }
 
+@font-face {
+  font-family: "RussoOne";
+  src: local("RussoOne"),
+    url('./fonts/RussoOne-Regular.ttf') format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "PottaOne";
+  src: local("PottaOne"),
+    url('./fonts/PottaOne-Regular.ttf') format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "BungeeInline";
+  src: local("BungeeInline"),
+    url('./fonts/BungeeInline-Regular.ttf') format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Aladin";
+  src: local("Aladin"),
+    url('./fonts/Aladin-Regular.ttf') format("truetype");
+  font-weight: 400;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

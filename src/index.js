@@ -8,6 +8,10 @@ import './fonts/Lobster-Regular.ttf';
 import './fonts/Pacifico-Regular.ttf';
 import './fonts/Satisfy-Regular.ttf';
 import './fonts/Assistant-Regular.ttf'
+import './fonts/RussoOne-Regular.ttf'
+import './fonts/PottaOne-Regular.ttf'
+import './fonts/BungeeInline-Regular.ttf'
+import './fonts/Aladin-Regular.ttf'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
