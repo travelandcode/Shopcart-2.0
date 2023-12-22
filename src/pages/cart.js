@@ -7,7 +7,7 @@ import CartSection from '../components/cart/cart_section'
 
 function Cart(){
     return(
-        <div className="[ cart ][ flex flex-col ][ bg-white ][ overscroll-auto ][ w-screen ]">
+        <div className="[ cart ][ flex flex-col ][ bg-[#f7f7f7] ][ overscroll-auto ][ w-screen ]">
             <MobileTopNavBar/>
             <MobileNavBar/>
             <TopNavBar />
