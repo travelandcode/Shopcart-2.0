@@ -3,10 +3,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBasketShopping } from '@fortawesome/free-solid-svg-icons';
 import Profile from './profile'
 import { useCart } from '../providers/cart_provider';
+import { useEffect, useRef } from 'react';
+import { api } from '../service/axios';
+import { useUser } from '../providers/user_provider';
 
 
 function NavBar () {
     const { cartProducts } = useCart()
+    const { fetchUser } = useUser()
+    let user = []
+    useEffect(() =>{
+        user = fetchUser()
+        
+    },[])
     return (
         <div className="[ navbar ][ py-[15px] ][ sticky top-0 ][ z-[2] ][ bg-[#fff] ][ w-full h-[82px] tablet:w-[760px] ][ px-[40px] tablet:px-[20px] ][ flex flex-row ][ border-b-2 border-[#cccccc] ][ mx-auto ][ phone:hidden ]">
             <div className="[ nav-bar-container ][ flex flex-row [ mx-auto ][ w-[1280px] tablet:w-full ][ justify-between ] ">
@@ -62,7 +71,7 @@ function NavBar () {
                     </div>
                 </div>
                 <div className="[ nav-right-content ][ flex flex-row ][ h-auto ][ my-auto ]">
-                    <Profile />
+                    <Profile user={user.user} />
                     <a href='/cart'  className="[ cart-container ][ relative ][ h-[30px] w-[60px] ][ ml-4 ][ flex flex-row ][ cursor-pointer ][ my-auto ]">
                         <FontAwesomeIcon className="[ cart-icon ][ h-full w-[40px] ][ mx-auto ][ my-auto ]" icon={faBasketShopping} style={{color: '#FFA33C'}}/>
                         {
