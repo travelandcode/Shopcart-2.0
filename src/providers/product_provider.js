@@ -1,5 +1,4 @@
-import React, { createContext, useContext, useEffect, useState, useRef } from 'react';
-import { api } from '../service/axios';
+import React, { createContext, useContext, useEffect, useState} from 'react';
 // Create a context
 const ProductContext = createContext({});
 
@@ -12,25 +11,29 @@ export function ProductProvider({children}) {
         const products = localStorage.getItem("products")
         return products ? JSON.parse(products): []
     })
-    const productRef = useRef(false)
 
     useEffect(() =>{
         localStorage.setItem("products",JSON.stringify(storeProducts));
-      },[storeProducts])
-    useEffect(() =>  {
-        if(productRef.current === false){
-            api.get('/products')
-                .then(res =>{
-                    setProducts(res.data)
-                    localStorage.setItem("products",JSON.stringify(res.data))
-                }).catch(error=>{
-                    console.log(error)
-                })
+    },[storeProducts])
+
+    async function fetchProducts(){
+        try {
+            const response = await fetch('http://localhost:3001/products/');
+            
+            if (!response.ok) {
+                throw new Error(`Failed to fetch products: ${response.status} - ${response.statusText}`);
+            }
+            
+            const result = await response.json();
+            setProducts(result.data)
+        } catch (error) {
+            console.error('Error fetching products:', error.message);
         }
-        return () => {
-            productRef.current = true
-        }
+    }
+
+    useEffect(() => {
+        fetchProducts();
     }, []);
     
-      return <ProductContext.Provider value={{ storeProducts }}>{children}</ProductContext.Provider>; 
+    return <ProductContext.Provider value={{ storeProducts }}>{children}</ProductContext.Provider>; 
 }
