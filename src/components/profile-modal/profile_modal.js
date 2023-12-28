@@ -13,7 +13,7 @@ function ProfileModal({isOpen,pic,name,email}){
     }
 
     return(
-        <div className="[ profile-modal ][ bg-white ][ rounded-[20px] ][ flex flex-col ][ border-2 border-solid ][ w-[350px] h-auto ][ px-[10px] py-[20px] ][ hidden ][ fixed ][ top-[102px]  right-[175px] ][ z-[1] ]" style={{display:  isOpen ? 'block': 'none'}}>
+        <div className={`[ profile-modal ][ bg-white ][ rounded-[20px] ][ flex flex-col ][ border-2 border-solid ][ w-[350px] h-auto ][ px-[10px] py-[20px] ][ fixed ][ top-[102px]  right-[175px] ][ z-[1] ]`} style={{display:  isOpen ? 'block': 'none'}}>
             <div className="[ profile-account ][ bg-white ][ border-b-2 ][ flex flex-row ][ w-full ][ h-[70px] ][ px-[10px] ][ relative ] ">
                 <img className="[ profile-img ][ w-[50px] h-[50px] ][ my-auto ][ rounded-full ] " src={pic} />
                 <div className='[ profile-name-section ][ flex flex-col ][ ml-[8px] mt-[10px] ][ w-auto ]'>

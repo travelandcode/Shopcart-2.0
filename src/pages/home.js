@@ -13,7 +13,7 @@ import MobileNavBar from '../components/mobile/mobile_navbar';
 
 function Home () {
     return (
-        <div className="[ home ][ flex flex-col ][ bg-white ][ h-full ][ overscroll-auto ][ w-screen ]">
+        <div className="[ home ][ flex flex-col ][ bg-[#f7f7f7] ][ h-full ][ overscroll-auto ][ w-screen ]">
             <MobileTopNavBar/>
             <MobileNavBar/>
             <TopNavBar />

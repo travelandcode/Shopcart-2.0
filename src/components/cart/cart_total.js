@@ -38,10 +38,13 @@ function CartTotal(){
         const item = storeProducts.find(i => i.id === cartItem.id)
         return total + (item?.price || 0) * cartItem.quantity
       }, 0)
-    
-    const tax = subTotal * 0.175
-    
-    const total = subTotal + deliveryCost - discountCost + tax
+     
+    const tax = cartProducts.reduce((total, cartItem) => {
+        const item = storeProducts.find(i => i.id === cartItem.id)
+        return total + ((item?.price || 0) *.15) * cartItem.quantity
+      }, 0)
+    const formattedTax = Number(parseFloat(tax).toFixed(2))
+    const total = subTotal + deliveryCost - discountCost + formattedTax
 
     const handleSubmit = async () =>{
         try {
@@ -54,7 +57,7 @@ function CartTotal(){
                         'Accept': 'application/json',
                         'Content-Type': 'application/json'
                       },
-                    body: JSON.stringify({cartProducts: cartProducts})
+                    body: JSON.stringify({cartProducts: cartProducts, shipping: deliveryCost})
                 }
             )
             
@@ -96,7 +99,7 @@ function CartTotal(){
             <div className='[ subtotal-section ][ py-[20px] ][ border-b-2 border-[#BEBEBE] border-dashed ]'>
                 <div className='[ subtotal-line ][ flex flex-row ][ justify-between ]'>
                     <p className='[ subtotal-label ][ text-[18px] font-[Roboto] text-[#404040] ]'>Subtotal</p>
-                    <p className='[ subtotal-txt ][ text-[18px] font-[Pacifico] text-[#404040] ]'>${subTotal}</p>
+                    <p className='[ subtotal-txt ][ text-[18px] font-[Pacifico] text-[#404040] ]'>${parseFloat(subTotal).toFixed(2)}</p>
                 </div>
                 <div className='[ discount-line ][ mt-2 ][ flex flex-row ][ justify-between ]'>
                     <p className='[ discount-label ][ text-[#888888] text-[14px] font-[Roboto] ]'>Discount</p>

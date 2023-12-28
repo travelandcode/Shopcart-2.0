@@ -7,6 +7,7 @@ import { ProductProvider } from './providers/product_provider.js';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { UserProvider } from './providers/user_provider.js';
 import Product from './pages/store_product.js';
+import Success from './pages/success.js';
 
 function App() {
   return (
@@ -23,6 +24,9 @@ function App() {
             </Route>
             <Route path="/product/:id">
               <Product />
+            </Route>
+            <Route path="/success">
+              <Success />
             </Route>
           </BrowserRouter>
           </UserProvider>

@@ -6,7 +6,8 @@ export const CartContext = createContext({
   getProductQuantity: () => {},
   increaseCartQuantity: () => {},
   decreaseCartQuantity: () => {},
-  removeFromCart: () => {}
+  removeFromCart: () => {},
+  clearClart: () => {}
 })
 
 export function useCart() {
@@ -76,12 +77,18 @@ export const CartProvider = ({ children }) => {
     });
   }
 
+  function clearClart() {
+    localStorage.setItem("cartProducts",JSON.stringify([]))
+    setCartProducts([])
+  }
+
   return (
     <CartContext.Provider value={{
       getProductQuantity,
       increaseCartQuantity,
       decreaseCartQuantity,
       removeFromCart,
+      clearClart,
       cartProducts
     }}>{children}</CartContext.Provider>
   )
