@@ -1,8 +1,4 @@
-import NavBar from '../components/navbar';
-import TopNavBar from '../components/top_navbar'
-import MobileTopNavBar from '../components/mobile/mobile_top_navbar';
-import Footer from '../components/footer/footer_section'
-import MobileNavBar from '../components/mobile/mobile_navbar';
+import BasePage from '../layouts/base_page';
 
 import FAQs from '../constants/faq.json'
 import FAQTabs from '../components/faq_tabs';
@@ -11,11 +7,7 @@ function FAQ () {
 
     const height = (50 * FAQs.length).toString() + "px" 
     return (
-        <div className="[ home ][ flex flex-col ][ bg-[#f7f7f7] ][ h-full overscroll-auto ][ w-screen ]">
-            <MobileTopNavBar/>
-            <MobileNavBar/>
-            <TopNavBar />
-            <NavBar />
+        <BasePage>
             <div className={`flex flex-col mx-auto p-[30px] h-[${height}] w-2/3 ]`}>
                 <div className="[ faq-title-section ][ flex flex-col text-left ] ">
                     <p className="[ faq-txt ][ text-[36px] mb-[15px] font-[sans-serif] font-bold  ]">Frequently Asked Questions</p>
@@ -39,8 +31,7 @@ function FAQ () {
                 </div>
                 <FAQTabs faqs={FAQs} />
             </div>
-            <Footer />
-        </div>
+        </BasePage>
     );
 }
 
