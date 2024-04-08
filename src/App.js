@@ -8,6 +8,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { UserProvider } from './providers/user_provider.js';
 import Product from './pages/store_product.js';
 import Success from './pages/success.js';
+import FAQ from './pages/faq.js'
 
 function App() {
   return (
@@ -27,6 +28,9 @@ function App() {
             </Route>
             <Route path="/success">
               <Success />
+            </Route>
+            <Route path="/faq">
+              <FAQ />
             </Route>
           </BrowserRouter>
           </UserProvider>
