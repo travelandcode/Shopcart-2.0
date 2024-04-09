@@ -27,7 +27,7 @@ function PasswordModal(){
     return(
         <div  className="[ password-modal-container ][ flex ][ relative ][ h-[600px] w-[1000px] ][ mx-auto my-auto ][ shadow-sm ][ z-[1] ]">
             <div className="[ password-modal ][ h-[475px] w-[450px] ][ flex flex-col ][ my-auto mx-auto ][[ bg-white ][ px-[20px] py-[30px] ][ rounded-[10px] ]">
-                    <button  className="[ close-btn ][ z-[1] ][ absolute ][ flex ][ top-[80px] right-[240px] ][ cursor-pointer ][ w-[24px] h-[24px] ][ scale-[1.7] ]">
+                <button  className="[ close-btn ][ z-[1] ][ flex ][ relative ][ right-[-380px] ][ cursor-pointer ][ w-[24px] h-[24px] ][ scale-[1.7] ]">
                     <svg className="[ w-[15px] h-[15px] ][ mx-auto my-auto ]" xmlns="http://www.w3.org/2000/svg" width="20" data-e2e="" height="20" viewBox="0 0 48 48" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M21.1718 23.9999L10.2931 13.1212C9.90261 12.7307 9.90261 12.0975 10.2931 11.707L11.7074 10.2928C12.0979 9.90228 12.731 9.90228 13.1216 10.2928L24.0002 21.1715L34.8789 10.2928C35.2694 9.90228 35.9026 9.90228 36.2931 10.2928L37.7073 11.707C38.0979 12.0975 38.0979 12.7307 37.7073 13.1212L26.8287 23.9999L37.7073 34.8786C38.0979 35.2691 38.0979 35.9023 37.7073 36.2928L36.2931 37.707C35.9026 38.0975 35.2694 38.0975 34.8789 37.707L24.0002 26.8283L13.1216 37.707C12.731 38.0975 12.0979 38.0975 11.7074 37.707L10.2931 36.2928C9.90261 35.9023 9.90261 35.2691 10.2931 34.8786L21.1718 23.9999Z"/></svg>
                 </button>
                 <div className="[ top-section ][ mx-auto ][ mt-[20px] ]">
@@ -65,7 +65,7 @@ function PasswordModal(){
                     { (password1 !== password2) && <div className="[ error-message ][ font-[Roboto] ][ text-[#FF0000] ][ mt-[10px] ]">Passwords do not match</div>}
                 </div>
                 <button className={`[ set-password-btn ][ mx-auto ][ rounded-[10px] ][ bg-[#FFA33C] hover:bg-[#F3B664] ][ w-[375px] h-[40px] ][ ${(password1 !== password2 ? "mt-[20px]": "mt-[50px]")} ]`}>
-                            <p className="[ set-password-btn-txt ][ text-white text-[18px] font-[Lobster] ]">Set Password</p>
+                            <p className="[ set-password-btn-txt ][ text-white text-[18px] font-[sans-serif] font-bold ]">Set Password</p>
                 </button>
             </div>
         </div>
