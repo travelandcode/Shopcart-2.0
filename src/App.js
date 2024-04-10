@@ -33,6 +33,9 @@ function App() {
             <Route path="/faq">
               <FAQ />
             </Route>
+            <Route path="/login">
+              <LoginPage />
+            </Route>
           </BrowserRouter>
           </UserProvider>
         </CartProvider>
