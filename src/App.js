@@ -4,11 +4,12 @@ import Home from './pages/home.js'
 import Cart from './pages/cart.js'
 import { CartProvider } from './providers/cart_provider.js';
 import { ProductProvider } from './providers/product_provider.js';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import { UserProvider } from './providers/user_provider.js';
 import Product from './pages/store_product.js';
 import Success from './pages/success.js';
 import FAQ from './pages/faq.js'
+import LoginPage from './pages/login.js';
 
 function App() {
   return (
@@ -31,6 +32,9 @@ function App() {
             </Route>
             <Route path="/faq">
               <FAQ />
+            </Route>
+            <Route path="/login">
+              <LoginPage />
             </Route>
           </BrowserRouter>
           </UserProvider>
