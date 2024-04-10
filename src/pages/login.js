@@ -3,6 +3,7 @@ import HappyPeople from '../assets/happy-people.png'
 import GoogleLogo from '../assets/google.svg'
 import FacebookLogo from '../assets/facebook.svg'
 import { useState } from 'react'
+import PasswordCriteriaModal from '../components/password_criteria_modal'
 
 function LoginPage() {
     const [view,setView] = useState('login')
