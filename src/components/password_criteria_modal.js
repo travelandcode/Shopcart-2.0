@@ -10,8 +10,8 @@ function PasswordCriteriaModal(password){
     return (
 
         
-        <div className="[ password-check ][ bg-white ][ h-auto w-[300px] ][ border border-solid ][ shadow-md shadow-current ][ p-[10px] ][ rounded-[10px] ][ flex flex-col ][ z-[100] ][ absolute top-[250px] left-0 ]">
-            <div className="[ display-txt ][ font-[Roboto] text-[16px] ]">Password Requirements</div>
+        <div className="[ password-check ][ bg-white ][ h-auto w-[300px] ][ border border-solid ][ shadow-md shadow-current ][ p-[10px] ][ rounded-[10px] ][ flex flex-col ][ z-[100] ][ absolute top-[475px] right-[80px] ]">
+            <div className="[ display-txt ][ font-[Roboto] font-bold text-[16px] ]">Password Requirements</div>
             <div className="[ display-txt ][ font-[Roboto] text-[22px] ][ mt-[10px] ]">{displayText}</div>
             <div className="[ progress-bar ][ mt-[15px] ][ flex flex-row ]">
                 <div className={`[ h-[11px] w-[60px] ][ rounded-[10px] ][ ${ checksRemaining === 4 && "bg-[#D3D3D3]" } ${ checksRemaining === 3 && "bg-[#FF0000]"} ${ (checksRemaining === 1 || checksRemaining === 2)  && "bg-[#F28C28]"} ${ checksRemaining === 0 && "bg-[#0BDA51]"} ]`}></div>
