@@ -8,13 +8,18 @@ import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
 import PasswordCriteriaModal from '../components/password_criteria_modal'
 
 function LoginPage() {
+    const [password, setPassword] = useState("")
     const [isPasswordHidden, setIsPasswordHidden] = useState(true)
     const [view,setView] = useState('login')
     const toggleView = (currentView) => {
         setView(currentView)
+        setPassword("")
     }
-    const changePasswordtoHidden = (isPasswordHidden) => {
+    const changePasswordtoHidden = () => {
         setIsPasswordHidden(!isPasswordHidden)
+    }
+    const handlePasswordChange = (e) => {
+        setPassword(e.target.value)
     }
     return(
         <div className="[ login-page ][ flex flex-row ][ w-full h-screen bg-[#E8E8E8] ]">
@@ -48,8 +53,8 @@ function LoginPage() {
                                 <input className="[ password-input ][ h-full w-full ][ bg-[#E8E8E8] ][ outline-none ][ my-auto ][ rounded-[15px] ][ pl-[20px] pr-[50px] ][ placeholder:text-[#808080] text-[#808080] ]" placeholder="Email address"/>
                             </div>
                             <div className="[ password-container ][ w-full h-[60px] ][ rounded-[15px] ][ bg-[#E8E8E8] ][ mt-[20px] ][ flex ][ relative ]">
-                                <input className="[ password-input ][ h-full w-full ][ my-auto ][ bg-[#E8E8E8] ][ rounded-[15px] ][ pl-[20px] pr-[50px] ][ outline-none ][ placeholder:text-[#808080] text-[#808080] ]" type={isPasswordHidden ? 'password' : ''} placeholder="Password"/>
-                                <button onClick={() => changePasswordtoHidden(isPasswordHidden)} className="[ eye-container ][ w-[60px] h-[40px] ][ my-auto ][ flex ]">
+                                <input onChange={handlePasswordChange} value={password} className="[ password-input ][ h-full w-full ][ my-auto ][ bg-[#E8E8E8] ][ rounded-[15px] ][ pl-[20px] pr-[50px] ][ outline-none ][ placeholder:text-[#808080] text-[#808080] ]" type={isPasswordHidden ? 'password' : ''} placeholder="Password"/>
+                                <button onClick={() => changePasswordtoHidden()} className="[ eye-container ][ w-[60px] h-[40px] ][ my-auto ][ flex ]">
                                     {
                                         isPasswordHidden ?
                                             <FontAwesomeIcon className="[ h-[25px]  w-[25px] ][ my-auto mx-auto ]" icon={faEyeSlash} style={{color: "#D0D0D0"}} />
@@ -64,7 +69,7 @@ function LoginPage() {
                                     <p className='text-gray-400 hover:text-gray-300'>Forgot Password?</p>
                                 </button>
                             }
-                            
+                            { (password.length > 0 && view === 'signup') && PasswordCriteriaModal(password)}
                         </div>
                         <button className='[ login-btn ][ bg-orange-400 ][ w-full h-[50px] ][ rounded-[15px] ][ text-white font-medium text-[16px] ][ mt-[25px] ][ hover:bg-orange-300 ]'>
                             { view === 'login' ? 'Login' : 'Sign Up'}
