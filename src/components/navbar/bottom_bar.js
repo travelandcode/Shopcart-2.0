@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBasketShopping } from '@fortawesome/free-solid-svg-icons';
+import { faBasketShopping, faUser } from '@fortawesome/free-solid-svg-icons';
 import { useCart } from '../../providers/cart_provider';
 import { useEffect, useState } from 'react';
 import { useProduct } from '../../providers/product_provider';
@@ -100,8 +100,11 @@ function BottomBar(){
                 
                 </div>
                 <div className="[ nav-right-content ][ flex flex-row ][ h-auto ][ my-auto ]">
-
+                    <a href='#' className="[ account-container ][ h-[30px] w-[60px] ][ flex flex-row ][ cursor-pointer ]">
+                        <FontAwesomeIcon className="[ account-icon ][ h-full w-[34px] ][ mx-auto my-auto ]" icon={faUser} style={{color: "#00ba34"}} />
+                    </a>
                     <a href='/cart'  className="[ cart-container ][ relative ][ h-[30px] w-[60px] ][ ml-4 ][ flex flex-row ][ cursor-pointer ][ my-auto ]">
+                   
                         <FontAwesomeIcon className="[ cart-icon ][ h-full w-[40px] ][ mx-auto ][ my-auto ]" icon={faBasketShopping} style={{color: '#FFA33C'}}/>
                         <div className="[ cart-quantity ][ absolute ][ bg-[#00ba34] ][ h-[18px] w-[18px] ][ right-[10px] top-[20px] ][ rounded-full ][ text-[12px] text-center font-[Lobster] text-white ]">{ cartProducts.length > 0 ? cartProducts.length : 0}</div>
                     </a>
