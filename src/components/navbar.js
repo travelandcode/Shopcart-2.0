@@ -3,7 +3,6 @@ import BottomBar from "./navbar/bottom_bar";
 
 
 function NavBar () {
-   
     return (
         <div className="[ navbar ]">
             <TopBar />
