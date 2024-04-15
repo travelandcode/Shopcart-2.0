@@ -41,7 +41,7 @@ function LoginPage() {
 
         try{
             if(isEmailEmpty || isPasswordEmpty) return
-            const response =  await fetch('http://localhost:3001/auth/login', {
+            const response =  await fetch(`${process.env.REACT_APP_API_URL}/auth/login`, {
                 method: 'POST',
                 headers: {'Content-Type':'application/json'},
                 body: JSON.stringify({email,password}),
@@ -60,7 +60,7 @@ function LoginPage() {
         try{
             // TODO: - This is a temporary fix. Remember to fix CORS Error associated with google oauth using the FETCH functionality
 
-            window.location.href = 'http://localhost:3001/auth/google'
+            window.location.href = `${process.env.REACT_APP_API_URL}/auth/google`
 
             
         }catch(error){
@@ -74,7 +74,7 @@ function LoginPage() {
 
     async function getUser(){
         try {
-            const response = await fetch('http://localhost:3001/auth/user', {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/auth/user`, {
                 method: 'GET',
                 headers: {'Content-Type':'application/json'},
                 credentials: 'include',

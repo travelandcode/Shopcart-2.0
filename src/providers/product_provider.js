@@ -18,7 +18,7 @@ export function ProductProvider({children}) {
 
     async function fetchProducts(){
         try {
-            const response = await fetch('http://localhost:3001/products/');
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/products/`);
             
             if (!response.ok) {
                 throw new Error(`Failed to fetch products: ${response.status} - ${response.statusText}`);

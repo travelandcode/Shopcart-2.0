@@ -50,7 +50,7 @@ function CartTotal(){
         try {
             const stripe = await loadStripe("pk_test_51OHIOsDAGzMNj4W5uwIIqStOW0AdV8Ke3Mtfq2by6u7AApmm1P6TU2s43V2NaW3kGWyhsX1sEhA7BjXrkOsO0kh300rhQtNoVB")
             // Make a POST request to the specified endpoint
-            const response = await fetch('http://localhost:3001/checkout',
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/checkout`,
                 {
                     method: "POST",
                     headers: {

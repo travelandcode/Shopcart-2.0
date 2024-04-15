@@ -17,7 +17,7 @@ function LoggedInProfile({firstname}){
 
         try{
 
-            const response = await fetch('http://localhost:3001/auth/logout', {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/auth/logout`, {
                 method: 'GET',
                 headers: {'Content-Type':'application/json'},
                 credentials: 'include'

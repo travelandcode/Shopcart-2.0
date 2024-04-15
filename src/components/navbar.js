@@ -27,8 +27,6 @@ function NavBar () {
         setResults(filteredResults);
     };
 
-    console.log(user)
-
     const updateRecommendations = (filteredResults) => {
         let recommendations = []
         filteredResults.map(result => {
@@ -49,8 +47,6 @@ function NavBar () {
         setResults(filteredResults)
         updateRecommendations(filteredResults)
     }, [searchTerm,products])
-
-    console.log(user)
 
 
     return (

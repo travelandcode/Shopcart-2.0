@@ -54,7 +54,7 @@ function SignUpPage() {
         try{
             if(isEmailEmpty || isFirstNameEmpty || isLastNameEmpty || isPasswordEmpty) return 
             const name = firstName+' '+lastName
-            const response = await fetch('http://localhost:3001/auth/signup', {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/auth/signup`, {
                 method: 'POST',
                 headers: {'Content-Type':'application/json'},
                 body: JSON.stringify({name,email,password}),
@@ -76,7 +76,7 @@ function SignUpPage() {
         try{
             // TODO: - This is a temporary fix. Remember to fix CORS Error associated with google oauth using the FETCH functionality
 
-            window.location.href = 'http://localhost:3001/auth/google'
+            window.location.href = `${process.env.REACT_APP_API_URL}/auth/google`
 
             // const response = await fetch('http://localhost:3001/auth/google', {
             //     method: 'GET',
@@ -98,7 +98,7 @@ function SignUpPage() {
 
     async function getUser(){
         try {
-            const response = await fetch('http://localhost:3001/auth/user', {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/auth/user`, {
                 method: 'GET',
                 headers: {'Content-Type':'application/json'},
                 credentials: 'include',
