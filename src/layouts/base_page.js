@@ -1,7 +1,5 @@
 import NavBar from '../components/navbar';
-import MobileTopNavBar from '../components/mobile/mobile_top_navbar';
 import Footer from '../components/footer/footer_section'
-import MobileNavBar from '../components/mobile/mobile_navbar';
 
 function BasePage({children}){
     return(
