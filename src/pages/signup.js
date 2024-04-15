@@ -9,7 +9,7 @@ import CreateUserToast from '../components/toasts/createUserToast'
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
 import Helper from '../util/helper'
 
-function SignUpPage({currentView}) {
+function SignUpPage() {
     const [ firstName, setFirstName] = useState("")
     const [ lastName, setLastName] = useState("")
     const [ email, setEmail] = useState("")
@@ -119,7 +119,7 @@ function SignUpPage({currentView}) {
 
     return(
         <div className="[ sign-up-page ][ flex flex-row ][ w-full h-screen bg-[#E8E8E8] ]">
-            <div className='[ sign-up-section ][ w-4/5 h-5/6 ][ flex flex-row ][ mx-auto my-auto ][ bg-white ][ rounded-[50px] ][ shadow-2xl ][ p-[40px] ]'>
+            <div className='[ sign-up-section ][ w-4/5 h-5/6 ][ flex flex-row ][ mx-auto my-auto ][ bg-white ][ rounded-[50px] ][ shadow-2xl ][ p-[30px] ]'>
                 <div className="[ left-panel ][ w-1/2 h-full ][ bg-orange-500 ][ shadow-2xl ][ rounded-[50px] ][ z-[100] ][ px-[40px] ][ relative flex-col ]">
                     <div className='[ left-panel-cotent ]'>
                         <p className='[ mt-[60px] ]mb-[25px] ][ text-[30px] font-bold text-white text-left ]'>Where Every Click Adds Value to Your Life, Filling Your Cart with Joy, Savings, and Everything in Between!</p>      
@@ -164,10 +164,10 @@ function SignUpPage({currentView}) {
                             {isPasswordEmpty &&<p className='[ password-error-message ][ text-left font-sans text-[14px] font-bold ][ mt-[3px] text-[#FF3131] ]'>Password is required</p>}
                             { password.length > 0 && PasswordCriteriaModal(password)}
                         </div>
-                        <button type='submit' onClick={() =>{handleBtn()}} className='[ login-btn ][ bg-orange-400 ][ w-full h-[50px] ][ rounded-[15px] ][ text-white font-medium text-[16px] ][ mt-[25px] ][ hover:bg-orange-300 ]'>
+                        <button type='submit' onClick={() =>{handleBtn()}} className='[ login-btn ][ bg-orange-400 ][ w-full h-[50px] ][ rounded-[15px] ][ text-white font-medium text-[16px] ][ mt-[20px] ][ hover:bg-orange-300 ]'>
                             Sign Up
                         </button>   
-                        <div class="relative flex py-5 items-center w-5/6 mx-auto">
+                        <div class="relative flex py-4 items-center w-5/6 mx-auto">
                             <div class="flex-grow border-t border-gray-400"></div>
                             <span class="flex-shrink mx-4 text-gray-400">Or Register With</span>
                             <div class="flex-grow border-t border-gray-400"></div>
@@ -178,7 +178,7 @@ function SignUpPage({currentView}) {
                                 <p className='[ font-[Roboto] font-bold text-[17px] ][ ml-[5px] ]'>Google</p>
                             </div>
                         </button>
-                        <div className='[ mt-[25px] ][ mx-auto flex flex-row ]'>
+                        <div className='[ mt-[20px] ][ mx-auto flex flex-row ]'>
                             <p className='[ font-[Roboto] text-[16px] font-medium ]'>Already have an account?</p>
                             <a href='/login' className='[ ml-[5px] ][ text-orange-400 text-[16px] font-bold font-[Roboto] ][ hover:text-orange-300'>Login</a>
                         </div>
