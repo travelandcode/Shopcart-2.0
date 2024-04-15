@@ -17,16 +17,8 @@ export function UserProvider ({ children }) {
 
   async function fetchUser() {       
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/auth/user`, {
-        method: 'GET',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json',
-        },
-        credentials: 'include'
-      });
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/auth/user`);
       const result =  await response.json()
-      console.log(result)
       setUser(result.user)
     } catch (error) {
       console.error('Error fetching data:', error);
