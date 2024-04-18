@@ -70,7 +70,7 @@ function LoginPage() {
 
     useEffect( () => {
         getUser()
-    })
+    },[])
 
     async function getUser(){
         try {

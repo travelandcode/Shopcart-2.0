@@ -34,7 +34,7 @@ export function UserProvider ({ children }) {
 
   useEffect(() => {
     fetchUser();
-  });
+  },[]);
 
   return (
     <UserContext.Provider value={{ currentUser}}>

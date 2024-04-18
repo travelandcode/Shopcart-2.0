@@ -94,7 +94,7 @@ function SignUpPage() {
 
     useEffect( () => {
         getUser()
-    })
+    },[])
 
     async function getUser(){
         try {
