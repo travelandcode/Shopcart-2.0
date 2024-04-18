@@ -2,6 +2,7 @@
   "name": "shopcart",
   "version": "2.0",
   "private": true,
+  "proxy": "https://theshopcart-api.vercel.app",
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",

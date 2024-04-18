@@ -8,6 +8,7 @@ import PasswordCriteriaModal from '../components/password_criteria_modal'
 import CreateUserToast from '../components/toasts/createUserToast'
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
 import Helper from '../util/helper'
+import { useUser } from '../providers/user_provider'
 
 function SignUpPage() {
     const [ firstName, setFirstName] = useState("")
@@ -21,6 +22,8 @@ function SignUpPage() {
     const [isPasswordEmpty,setIsPasswordEmpty] = useState(false)
     const [isPasswordHidden, setIsPasswordHidden] = useState(true)
     const [showToast, ] = useState(false)
+    const { currentUser } = useUser()
+    const user = currentUser
     const history = useHistory()
     const helper = new Helper()
 
@@ -92,30 +95,30 @@ function SignUpPage() {
         }
     }
 
-    useEffect( () => {
-        getUser()
-    })
+    // useEffect( () => {
+    //     getUser()
+    // })
 
-    async function getUser(){
-        try {
-            const response = await fetch(`${process.env.REACT_APP_API_URL}/auth/user`, {
-                method: 'GET',
-                headers: {'Content-Type':'application/json'},
-                credentials: 'include',
+    // async function getUser(){
+    //     try {
+    //         const response = await fetch(`${process.env.REACT_APP_API_URL}/auth/user`, {
+    //             method: 'GET',
+    //             headers: {'Content-Type':'application/json'},
+    //             credentials: 'include',
                 
-            })
-            if (!response.ok) {
-                throw new Error(`Failed to fetch products: ${response.status} - ${response.statusText}`);
-            }
+    //         })
+    //         if (!response.ok) {
+    //             throw new Error(`Failed to fetch products: ${response.status} - ${response.statusText}`);
+    //         }
 
-            const result = await response.json();
-            if(response.ok || result.user){
-                history.push('/home')
-            }
-        } catch (error) {
-            console.error('Error fetching products:', error.message);
-        }
-    }
+    //         const result = await response.json();
+    //         if(response.ok || result.user){
+    //             history.push('/home')
+    //         }
+    //     } catch (error) {
+    //         console.error('Error fetching products:', error.message);
+    //     }
+    // }
 
     return(
         <div className="[ sign-up-page ][ flex flex-row ][ w-full h-screen bg-[#E8E8E8] ]">

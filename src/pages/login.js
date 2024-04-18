@@ -7,6 +7,7 @@ import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
 import CreateUserToast from '../components/toasts/createUserToast'
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
 import Helper from '../util/helper'
+import { useUser } from '../providers/user_provider'
 
 function LoginPage() {
     const [ email, setEmail] = useState("")
@@ -19,6 +20,8 @@ function LoginPage() {
     const [showToast, ] = useState(false)
     const history = useHistory()
     const helper = new Helper()
+    const { currentUser } = useUser()
+    const user = currentUser
 
     const changePasswordtoHidden = () => {
         setIsPasswordHidden(!isPasswordHidden)
@@ -42,9 +45,10 @@ function LoginPage() {
         try{
             if(isEmailEmpty || isPasswordEmpty) return
             const response =  await fetch(`${process.env.REACT_APP_API_URL}/auth/login`, {
+                mode: 'cors',
                 method: 'POST',
                 headers: {'Content-Type':'application/json'},
-                body: JSON.stringify({email,password}),
+                body: JSON.stringify({email:email,password:password}),
                 credentials: 'include'
             })
             const data = await response.json();
@@ -69,29 +73,33 @@ function LoginPage() {
     }
 
     useEffect( () => {
-        getUser()
-    })
+        handleUser()
+    },[])
 
-    async function getUser(){
-        try {
-            const response = await fetch(`${process.env.REACT_APP_API_URL}/auth/user`, {
-                method: 'GET',
-                headers: {'Content-Type':'application/json'},
-                credentials: 'include',
-                
-            })
-            if (!response.ok) {
-                throw new Error(`Failed to fetch products: ${response.status} - ${response.statusText}`);
-            }
-
-            const result = await response.json();
-            if(response.ok || result.user){
-                history.push('/home')
-            }
-        } catch (error) {
-            console.error('Error fetching products:', error.message);
-        }
+    function handleUser(){
+        if(user) history.push('/home')
     }
+
+    // async function getUser(){
+    //     try {
+    //         const response = await fetch(`${process.env.REACT_APP_API_URL}/auth/user`, {
+    //             method: 'GET',
+    //             headers: {'Content-Type':'application/json'},
+    //             credentials: 'include',
+                
+    //         })
+    //         if (!response.ok) {
+    //             throw new Error(`Failed to fetch products: ${response.status} - ${response.statusText}`);
+    //         }
+
+    //         const result = await response.json();
+    //         if(response.ok || result.user){
+    //             history.push('/home')
+    //         }
+    //     } catch (error) {
+    //         console.error('Error fetching products:', error.message);
+    //     }
+    // }
 
     return(
         <div className="[ login-page ][ flex flex-row ][ w-full h-screen bg-[#E8E8E8] ]">

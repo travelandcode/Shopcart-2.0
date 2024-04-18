@@ -13,8 +13,8 @@ function NavBar () {
     const { cartProducts } = useCart()
     const { storeProducts } = useProduct()
     const { currentUser } = useUser()
-    const products = storeProducts
     const user = currentUser
+    const products = storeProducts
     const [results, setResults] = useState([])
     const [recommendations,setRecommendations] = useState([])
     const [searchTerm, setSearchTerm] = useState("")
