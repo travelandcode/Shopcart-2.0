@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 
 const UserContext = createContext({});
 
@@ -15,29 +15,60 @@ export const useUser = () => {
 export function UserProvider ({ children }) {
   const [currentUser, setUser] = useState(null)
 
-  async function fetchUser() {       
-    try {
-      const response = await fetch('http://localhost:3001/auth/user', {
-        method: 'GET',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json',
-        },
+  const localSignUp = async (name,email,password) => {
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/auth/signup`, {
+        method: 'POST',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify({name,email,password}),
         credentials: 'include'
-      });
+    })
+    if(response.status === 201) return {response:"User was created"}
+    if(response.status === 409) return {response:"User was already exists"}
+    return {response:"User was not created"}
+  }
+
+  const localSignIn = async (email,password) => {
+   try {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/auth/login`, {
+        method: 'POST',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify({email,password}),
+        credentials: 'include'
+      })
+      const result = response.json()
+      if(response.ok) {
+        setUser(result.user)
+        return "User successfully signed in"
+      }
+      return  "User cannot signin"
+   } catch (error) {
+      console.error(error)
+   }
+  }
+
+  const googleSignIn = async () => {
+    window.location.href = `${process.env.REACT_APP_API_URL}/auth/google`  
+  }
+
+  const fetchUser = async () => {
+    try {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/auth/user`, {
+        method: 'GET',
+        credentials: "include"
+      })
       const result =  await response.json()
       setUser(result.user)
     } catch (error) {
-      console.error('Error fetching data:', error);
+      console.error(error)
     }
   }
 
   useEffect(() => {
-    fetchUser();
-  },[]);
+    fetchUser()
+  },[])
 
   return (
-    <UserContext.Provider value={{ currentUser}}>
+    <UserContext.Provider value={{ currentUser, localSignUp, localSignIn, fetchUser, googleSignIn}}>
       {children}
     </UserContext.Provider>
   );

@@ -7,6 +7,7 @@ import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
 import CreateUserToast from '../components/toasts/createUserToast'
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
 import Helper from '../util/helper'
+import { useUser } from '../providers/user_provider'
 
 function LoginPage() {
     const [ email, setEmail] = useState("")
@@ -17,8 +18,13 @@ function LoginPage() {
     const [isIncorrectCredentials,setIsIncorrectCredentials] = useState(false)
     const [isPasswordHidden, setIsPasswordHidden] = useState(true)
     const [showToast, ] = useState(false)
+    const {currentUser,localSignIn, googleSignIn} = useUser()
     const history = useHistory()
     const helper = new Helper()
+
+    useEffect(() =>{
+        if(currentUser) history.push('/home')
+    },[])
 
     const changePasswordtoHidden = () => {
         setIsPasswordHidden(!isPasswordHidden)
@@ -41,56 +47,17 @@ function LoginPage() {
 
         try{
             if(isEmailEmpty || isPasswordEmpty) return
-            const response =  await fetch('http://localhost:3001/auth/login', {
-                method: 'POST',
-                headers: {'Content-Type':'application/json'},
-                body: JSON.stringify({email,password}),
-                credentials: 'include'
-            })
-            const data = await response.json();
-            if(data.message === 'User Login was successful' || response.status === 200) window.location.href = '/home'
-            if(data.message === 'Login Attempt Failed' || response.status === 401) setIsIncorrectCredentials(true)
+            const response = await localSignIn(email,password)
+            if(response === "User successfully signed in") history.push('/home')
+            //if(data.message === 'Login Attempt Failed' || response.status === 401) setIsIncorrectCredentials(true)
         }catch(error){
             console.log(error)
         }
         
     }
 
-    const handleGoogleBtn = async () => {
-        try{
-            // TODO: - This is a temporary fix. Remember to fix CORS Error associated with google oauth using the FETCH functionality
-
-            window.location.href = 'http://localhost:3001/auth/google'
-
-            
-        }catch(error){
-            console.error(error)
-        }
-    }
-
-    useEffect( () => {
-        getUser()
-    },[])
-
-    async function getUser(){
-        try {
-            const response = await fetch('http://localhost:3001/auth/user', {
-                method: 'GET',
-                headers: {'Content-Type':'application/json'},
-                credentials: 'include',
-                
-            })
-            if (!response.ok) {
-                throw new Error(`Failed to fetch products: ${response.status} - ${response.statusText}`);
-            }
-
-            const result = await response.json();
-            if(response.ok || result.user){
-                history.push('/home')
-            }
-        } catch (error) {
-            console.error('Error fetching products:', error.message);
-        }
+    const handleGoogleBtn = async () => { 
+        googleSignIn()
     }
 
     return(

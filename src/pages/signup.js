@@ -8,6 +8,7 @@ import PasswordCriteriaModal from '../components/password_criteria_modal'
 import CreateUserToast from '../components/toasts/createUserToast'
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
 import Helper from '../util/helper'
+import { useUser } from '../providers/user_provider'
 
 function SignUpPage() {
     const [ firstName, setFirstName] = useState("")
@@ -22,7 +23,12 @@ function SignUpPage() {
     const [isPasswordHidden, setIsPasswordHidden] = useState(true)
     const [showToast, ] = useState(false)
     const history = useHistory()
+    const {currentUser,localSignUp,googleSignIn} = useUser()
     const helper = new Helper()
+
+    useEffect(() =>{
+        if(currentUser) history.push('/home')
+    },[])
 
     const changePasswordtoHidden = () => {
         setIsPasswordHidden(!isPasswordHidden)
@@ -54,18 +60,14 @@ function SignUpPage() {
         try{
             if(isEmailEmpty || isFirstNameEmpty || isLastNameEmpty || isPasswordEmpty) return 
             const name = firstName+' '+lastName
-            const response = await fetch('http://localhost:3001/auth/signup', {
-                method: 'POST',
-                headers: {'Content-Type':'application/json'},
-                body: JSON.stringify({name,email,password}),
-                credentials: 'include'
-            })
-
-            if(response.message === 'User was created' || response.status === 201){
-                alert('User was successfully created')
+            const {response} = localSignUp(name,email,password)
+            console.log(response)
+            if(response === "User was created"){
+                alert("User was created")
                 history.push('/login')
             }
-
+            if(response === "User already exists") alert("User already exists")
+            if(response === "User was not created") alert("User was not created")
         }catch(error){
             console.log(error)
         }
@@ -73,48 +75,7 @@ function SignUpPage() {
     }
 
     const handleGoogleBtn = async () => {
-        try{
-            // TODO: - This is a temporary fix. Remember to fix CORS Error associated with google oauth using the FETCH functionality
-
-            window.location.href = 'http://localhost:3001/auth/google'
-
-            // const response = await fetch('http://localhost:3001/auth/google', {
-            //     method: 'GET',
-            //     headers: {'Content-Type':'application/json'},
-            // })
-            
-            // const data = await response.json();
-            
-            // if(data.message === 'User Login was successful' || response.status === 200) history.push('/')
-            
-        }catch(error){
-            console.error(error)
-        }
-    }
-
-    useEffect( () => {
-        getUser()
-    },[])
-
-    async function getUser(){
-        try {
-            const response = await fetch('http://localhost:3001/auth/user', {
-                method: 'GET',
-                headers: {'Content-Type':'application/json'},
-                credentials: 'include',
-                
-            })
-            if (!response.ok) {
-                throw new Error(`Failed to fetch products: ${response.status} - ${response.statusText}`);
-            }
-
-            const result = await response.json();
-            if(response.ok || result.user){
-                history.push('/home')
-            }
-        } catch (error) {
-            console.error('Error fetching products:', error.message);
-        }
+        googleSignIn()
     }
 
     return(
