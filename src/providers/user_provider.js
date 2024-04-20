@@ -50,6 +50,21 @@ export function UserProvider ({ children }) {
     window.location.href = `${process.env.REACT_APP_API_URL}/auth/google`  
   }
 
+  const signOut = async () => {
+    try{
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/auth/logout`, {
+          method: 'GET',
+          headers: {'Content-Type':'application/json'},
+          credentials: 'include'
+      })
+      if(response.ok){
+         return "Signed Out"
+      }
+    }catch(error){
+        console.log(error)
+    }
+  }
+
   const fetchUser = async () => {
     try {
       const response = await fetch(`${process.env.REACT_APP_API_URL}/auth/user`, {
@@ -68,7 +83,7 @@ export function UserProvider ({ children }) {
   },[])
 
   return (
-    <UserContext.Provider value={{ currentUser, localSignUp, localSignIn, fetchUser, googleSignIn}}>
+    <UserContext.Provider value={{ currentUser, localSignUp, localSignIn, fetchUser, googleSignIn, signOut }}>
       {children}
     </UserContext.Provider>
   );
