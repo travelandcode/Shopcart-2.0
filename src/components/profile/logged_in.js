@@ -2,10 +2,12 @@ import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import AccountSignInBox from '../../assets/account-signed-in-1.png'
 import { useState } from 'react';
+import { useUser } from '../../providers/user_provider';
 
 function LoggedInProfile({firstname}){
     const name = firstname
     const [showBox, setShowBox] = useState(false)
+    const {signOut} = useUser()
     const show = () => {
         setShowBox(true)
     }
@@ -14,25 +16,8 @@ function LoggedInProfile({firstname}){
     }
 
     const handleSignOut = async () => {
-
-        try{
-
-            const response = await fetch('http://localhost:3001/auth/logout', {
-                method: 'GET',
-                headers: {'Content-Type':'application/json'},
-                credentials: 'include'
-            })
-
-            console.log(response)
-
-            if(response.ok){
-                window.location.reload()
-            }
-
-        }catch(error){
-            console.log(error)
-        }
-        
+       const response = signOut()
+       if(response === 'Signed Out') window.location.reload()
     }
     return(
 

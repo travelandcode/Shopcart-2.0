@@ -50,8 +50,6 @@ function NavBar () {
         updateRecommendations(filteredResults)
     }, [searchTerm,products])
 
-    console.log(user)
-
 
     return (
         <div className="[ navbar ][ py-[15px] ][ sticky top-0 ][ z-[2] ][ bg-[#003d29] ][ w-full h-[82px] tablet:w-[760px] ][ px-[40px] tablet:px-[20px] ][ flex flex-row ][ mx-auto ][ phone:hidden ]">
