@@ -67,12 +67,12 @@ export function UserProvider ({ children }) {
 
   const fetchUser = async () => {
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/auth/user`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/user`, {
         method: 'GET',
         credentials: "include"
       })
       const result =  await response.json()
-      setUser(result.user)
+      setUser(result.data)
     } catch (error) {
       console.error(error)
     }
