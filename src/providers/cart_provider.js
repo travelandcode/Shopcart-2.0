@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
+import { useUser } from './user_provider';
 
 
 export const CartContext = createContext({
@@ -15,31 +16,72 @@ export function useCart() {
 }
 
 export const CartProvider = ({ children }) => {
-  const [cartProducts, setCartProducts] = useState(
-    localStorage.getItem("cartProducts") ? JSON.parse(localStorage.getItem("cartProducts")) : []
-  );
-
-  useEffect(() =>{
-    localStorage.setItem("cartProducts",JSON.stringify(cartProducts));
-  },[cartProducts])
+  const [cartProducts, setCartProducts] = useState([]);
+  const [isCartUpdated,setIsCartUpdated] = useState(false)
+  const {currentUser} = useUser()
 
   useEffect(() => {
-    try{
-      const cartProducts = localStorage.getItem("cartProducts"); // populates cart with local storage object
-      if (cartProducts) {
-        setCartProducts(JSON.parse(cartProducts));
+    if(isCartUpdated){
+      if (currentUser) {
+        updateUserCart(cartProducts);
       }
-    }catch(error){
+      else
+      {
+        sessionStorage.setItem('cart', JSON.stringify(cartProducts));
+      }
+    }
+    setIsCartUpdated(false);
+  }, [cartProducts, isCartUpdated, currentUser]);
+
+  useEffect(() => {
+    const storedCart = JSON.parse(sessionStorage.getItem('cart'))
+    if(storedCart){
+      setCartProducts(storedCart)
+    }
+    else{
+      fetchUserCart()
+    }
+  }, [currentUser])
+
+  const fetchUserCart = async () => {
+    try {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/user/cart`, {
+        method: 'GET',
+        credentials: 'include'
+      })
+      const result = await response.json()
+      const cart = result.data
+      if(cart.length === 0) return
+      setCartProducts(cart)
+    } catch (error) {
       console.error(error)
     }
-    
-  },[]);
+  }
+
+  const updateUserCart = async(cartProducts) => {
+    try {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/user/cart/update`,
+        {
+          method: 'POST',
+          headers: {'Content-Type':'application/json'},
+          body: JSON.stringify({cartProducts}),
+          credentials: 'include'
+        }
+      )
+      const result = response.json()
+      const cart = result.data
+      if(!cart) return
+      setCartProducts(cart)
+    } catch (error) {
+        console.error(error)
+    }
+  }
 
   function getProductQuantity(id) {
     return cartProducts.find((product) => product.id === id)?.quantity || 0;
   }
 
-  function increaseCartQuantity(id) {
+  async function increaseCartQuantity(id) {
     setCartProducts((currentProducts) => {
       if (currentProducts.find((product) => product.id === id) == null) {
         return [...currentProducts, { id, quantity: 1 }];
@@ -52,7 +94,8 @@ export const CartProvider = ({ children }) => {
           }
         });
       }
-    });
+    })
+    setIsCartUpdated(true)
   }
 
   function decreaseCartQuantity(id) {
@@ -69,17 +112,20 @@ export const CartProvider = ({ children }) => {
         });
       }
     });
+    setIsCartUpdated(true)
   }
 
   function removeFromCart(id) {
     setCartProducts(currentProducts =>{
        return currentProducts.filter(product => product.id !== id)
     });
+    setIsCartUpdated(true)
   }
 
-  function clearClart() {
+  function clearCart() {
     localStorage.setItem("cartProducts",JSON.stringify([]))
     setCartProducts([])
+    setIsCartUpdated(true)
   }
 
   return (
@@ -88,7 +134,7 @@ export const CartProvider = ({ children }) => {
       increaseCartQuantity,
       decreaseCartQuantity,
       removeFromCart,
-      clearClart,
+      clearCart,
       cartProducts
     }}>{children}</CartContext.Provider>
   )
