@@ -8,6 +8,7 @@ function Product(props){
     const description = props.description
     const id = props.id
     const { increaseCartQuantity } = useCart()
+
     return (
         <div className="[ product-card ][ h-[446px] w-[410px] phone:w-[150px] phone:h-auto tablet:w-[300px] ][ mx-auto ][ flex flex-col ]">
             <div className="[ product-container ][ bg-[#E0E0E0] ][ rounded-[10px] ][ relative ][ phone:h-1/2 ] ">
