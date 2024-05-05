@@ -1,7 +1,7 @@
 
 function DiscountBanner2(){
     return(
-        <div className="[ discount-banner-2 ][ w-screen h-[330px] phone:h-auto tablet:h-auto ][ bg-[#ffe6cc] ][ mb-[80px] phone:mb-[20px] tablet:mb-[20px] ]">
+        <div className="[ discount-banner-2 ][ w-auto h-[330px] phone:h-auto tablet:h-auto ][ bg-[#ffe6cc] ][ mb-[80px] phone:mb-[20px] tablet:mb-[20px] ]">
             <div className="[ discount-banner-2-container ][ flex flex-row ][ relative ][ justify-between ][ w-[1360px] h-full phone:w-[320px] tablet:w-[720px] ][ px-[40px] phone:px-[20px] tablet:px-[20px] ][ mx-auto ][ overflow-hidden ]">
                 <div className="[ discount-banner-2-content ][ justify-between ][ flex flex-row ][ w-full h-full ][ py-[62px] pt-[60px] pb-[40px] ][ my-auto ]">
                     <div className="[ discount-banner-2-txt ][ flex flex-col ]">
