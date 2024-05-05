@@ -27,8 +27,6 @@ function NavBar () {
         setResults(filteredResults);
     };
 
-    console.log(user)
-
     const updateRecommendations = (filteredResults) => {
         let recommendations = []
         filteredResults.map(result => {
@@ -48,13 +46,13 @@ function NavBar () {
         );
         setResults(filteredResults)
         updateRecommendations(filteredResults)
-    }, [searchTerm,products])
+    }, [searchTerm])
 
 
     return (
         <div className="[ navbar ][ py-[15px] ][ sticky top-0 ][ z-[2] ][ bg-[#003d29] ][ w-full h-[82px] tablet:w-[760px] ][ px-[40px] tablet:px-[20px] ][ flex flex-row ][ mx-auto ][ phone:hidden ]">
         <div className="[ nav-bar-container ][ flex flex-row [ mx-auto ][ w-full tablet:w-full ][ justify-between ] ">
-            <a aria-label='shopcart button' href='/'>
+            <a aria-label='shopcart button' href='/home'>
                 <img src={AltLogo}  className='w-[175px] h-[44px]'  alt='Alternate Logo'/>
             </a>
             <div className="[ nav-container ][ flex flex-row ][ w-auto h-[52px] tablet:w-auto ]">
