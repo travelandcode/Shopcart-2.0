@@ -4,7 +4,7 @@ import CartTotal from "./cart_total";
 function CartSection(){
 
     return(
-        <div className="[ cart-section ][ flex flex-row ][ mt-[40px] mb-[40px] ][ px-[80px] ][ mx-auto ]">
+        <div className="[ cart-section ][ flex flex-row ][ mt-[20px] mb-[40px] ][ px-[80px] ][ mx-auto ]">
             <CartDisplay />
             <CartTotal />
         </div>
