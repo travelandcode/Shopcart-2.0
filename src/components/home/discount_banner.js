@@ -1,7 +1,7 @@
 function DiscountBanner(){
 
     return(
-        <div className="[ discount-banner ][ w-screen h-screen phone:h-[350px] tablet:h-[700px] ][ bg-discount-background bg-no-repeat bg-cover phone:bg-center ][ flex ][ scale-[1] ]">
+        <div className="[ discount-banner ][ w-auto h-screen phone:h-[350px] tablet:h-[700px] ][ bg-discount-background bg-no-repeat bg-cover phone:bg-center ][ flex ][ scale-[1] ]">
             <div className="[ discount-container ][ mx-auto my-auto ][ px-[40px] phone:px-[20px] phone:py-[40px] ][ w-[1360px] h-[482px] phone:h-full phone:w-[360px] tablet:h-auto tablet:w-auto  ][ flex justify-end ] ">
                 <div className="[ discount-content ][ bg-[#003d29] ][ flex flex-col ][ w-[513px] h-full phone:w-full ][ py-[75px] px-[64px] phone:px-[30px] phone:py-[30px] ]">
                     <h3 className="[ discount-title ][ mb-3 ][ text-[52px] leading-[120%] text-left text-[#fff] font-semibold phone:text-[32px] ]">Get 5% Cash Back On $200</h3>

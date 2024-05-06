@@ -5,8 +5,8 @@ import { useState } from 'react';
 import { useCart } from '../../providers/cart_provider';
 
 function ProductSection({id}){
-    const productId = parseInt(id)
     const { storeProducts } = useProduct()
+    const productId = parseInt(id)
     const product = storeProducts.find(item => item.id === productId)
     const [count,setCount] = useState(0)
     const handleCount = (num) =>{
@@ -14,6 +14,10 @@ function ProductSection({id}){
     }
 
     const { increaseCartQuantity } = useCart()
+
+    if (!product) {
+        return <div>Product not found!</div>;
+    }
 
     return(
         <div className="[ product-section ][ flex flex-row ][ h-[620px] w-screen ][ py-[40px] px-[80px] ]">

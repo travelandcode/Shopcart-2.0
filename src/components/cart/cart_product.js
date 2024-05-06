@@ -1,23 +1,18 @@
 import { faMinus, faPlus, faHeart, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useCart } from '../../providers/cart_provider';
-import { useProduct } from '../../providers/product_provider';
 
-function CartProduct({id}){
-    const { storeProducts } = useProduct()
-    const products = storeProducts
+function CartProduct({id,products}){
     const { getProductQuantity, increaseCartQuantity, removeFromCart, decreaseCartQuantity } = useCart()
     const product = products.find(item => item.id === id)
     if(product === null) return null
     
-    const quantity = getProductQuantity(product.id)
+    const quantity = getProductQuantity(id)
     const cost = product.price * quantity
     const img = product.img_src[0]
-
-
     return(
         <div className="[ cart-product ][ flex flex-row ][ relative ][ py-[20px] ][ border-t-2 border-solid border-[#DCDCDC] ]">
-            <div className="[ cart-product-img-container ][ h-[200px] w-[200px] ][ bg-[#D3D3D3] ][ rounded-[10px] ]">
+            <div className="[ cart-product-img-container ][ h-[200px] w-[220px] ][ bg-[#D3D3D3] ][ rounded-[10px] ]">
                 <img className="[ cart-product-img ][ my-auto mx-auto ][[ w-[90%] h-[90%] ]" src={img} />
             </div>
             <div className="[ cart-product-section ][ ml-[20px] ]">
@@ -33,7 +28,7 @@ function CartProduct({id}){
                 </div>
             </div>
             <div className="[ cart-product-price-container ][ justify-between ][ flex flex-col ][ h-[200px] w-[150px] ][ absolute ][ right-0 rounded-[10px] ]">
-                <p className='[ price-txt ][ text-right text-[22px] font-[Pacifico] ]'>${parseFloat(cost).toFixed(2)}</p>
+                <p className='[ price-txt ][ text-right text-[22px] font-semibold font-[Roboto] ]'>${parseFloat(cost).toFixed(2)}</p>
                 <div className='[ button-section ][ flex flex-row ][ justify-between ]'>
                     <div className='[ save-btn-section ][ flex flex-row ]' >
                         <FontAwesomeIcon className='[ my-auto ]' icon={faHeart} style={{color: `#888888`,}} />

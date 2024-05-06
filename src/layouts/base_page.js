@@ -3,7 +3,7 @@ import Footer from '../components/footer/footer_section'
 
 function BasePage({children}){
     return(
-        <div className="[ base-page ][ flex flex-col ][ bg-[#f7f7f7] ][ h-full overscroll-auto ][ w-screen ]">
+        <div className="[ base-page ][ flex flex-col ][ bg-[#f7f7f7] ][ h-full overscroll-auto ][ w-auto ]">
             <NavBar />
                 {children}
             <Footer />

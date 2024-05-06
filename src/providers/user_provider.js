@@ -37,7 +37,7 @@ export function UserProvider ({ children }) {
       })
       const result = response.json()
       if(response.ok) {
-        setUser(result.user)
+        setUser(result.data)
         return "User successfully signed in"
       }
       return  "User cannot signin"
@@ -72,6 +72,7 @@ export function UserProvider ({ children }) {
         credentials: "include"
       })
       const result =  await response.json()
+      sessionStorage.setItem("user",JSON.stringify(result.data))
       setUser(result.data)
     } catch (error) {
       console.error(error)
@@ -79,7 +80,13 @@ export function UserProvider ({ children }) {
   }
 
   useEffect(() => {
-    fetchUser()
+    const user = sessionStorage.getItem("user")
+      if(user){
+        setUser(JSON.parse(user))
+      }
+      else{
+        fetchUser()
+      }
   },[])
 
   return (

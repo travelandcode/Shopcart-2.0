@@ -16,7 +16,7 @@ function LoggedInProfile({firstname}){
     }
 
     const handleSignOut = async () => {
-       const response = signOut()
+       const response = await signOut()
        if(response === 'Signed Out') window.location.reload()
     }
     return(
