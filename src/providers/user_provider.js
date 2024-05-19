@@ -69,7 +69,8 @@ export function UserProvider ({ children }) {
     try {
       const response = await fetch(`${process.env.REACT_APP_API_URL}/user`, {
         method: 'GET',
-        credentials: "include"
+        credentials: "include",
+        mode: 'cors'
       })
       const result =  await response.json()
       sessionStorage.setItem("user",JSON.stringify(result.data))
