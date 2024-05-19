@@ -15,7 +15,9 @@ export const ProductProvider = ({children}) => {
 
       const fetchProducts = async() => {
         try {
-            const response = await fetch(`${process.env.REACT_APP_API_URL}/products/`)
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/products/`,{
+                mode: 'no-cors'
+            })
             if (!response.ok) {
                 throw new Error(`Failed to fetch products: ${response.status} - ${response.statusText}`);
             }
